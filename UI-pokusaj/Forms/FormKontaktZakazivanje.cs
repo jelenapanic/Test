@@ -153,5 +153,9 @@ namespace UI_pokusaj.Forms
             radioButtonPolZ.Show();
             buttonDodajLjubimca.Show();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace UI_pokusaj.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bindingSourcePregledi.Filter = string.Format("LjubimacID = {0}", comboBox1.SelectedValue ?? 0);
+            bindingSourcePregledi.Filter = string.Format("Ljubimac = {0}", comboBox1.SelectedValue ?? 0);
                 
         }
 
