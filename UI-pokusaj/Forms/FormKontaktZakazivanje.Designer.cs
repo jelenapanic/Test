@@ -55,7 +55,7 @@
             this.dateTimePickerrodj = new System.Windows.Forms.DateTimePicker();
             this.labelIzborVrste = new System.Windows.Forms.Label();
             this.labelIyborImena = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxVrstaZiv = new System.Windows.Forms.ComboBox();
             this.bindingSourceLjubimac = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.buttonDodajLjubimca = new System.Windows.Forms.Button();
@@ -65,6 +65,7 @@
             this.veterinarTableAdapter1 = new UI_pokusaj.VetSet1TableAdapters.VeterinarTableAdapter();
             this.bindingSourcePregled = new System.Windows.Forms.BindingSource(this.components);
             this.preglediTableAdapter = new UI_pokusaj.VetSet1TableAdapters.PreglediTableAdapter();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLjubimac)).BeginInit();
@@ -339,18 +340,20 @@
             this.labelIyborImena.TabIndex = 30;
             this.labelIyborImena.Text = "Ime životinje:";
             // 
-            // comboBox1
+            // comboBoxVrstaZiv
             // 
-            this.comboBox1.DataSource = this.bindingSourceLjubimac;
-            this.comboBox1.DisplayMember = "Vrsta";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(675, 14);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(244, 24);
-            this.comboBox1.TabIndex = 31;
-            this.comboBox1.ValueMember = "LjubimacID";
+            this.comboBoxVrstaZiv.DataSource = this.bindingSourceLjubimac;
+            this.comboBoxVrstaZiv.DisplayMember = "Vrsta";
+            this.comboBoxVrstaZiv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxVrstaZiv.FormattingEnabled = true;
+            this.comboBoxVrstaZiv.Location = new System.Drawing.Point(491, 245);
+            this.comboBoxVrstaZiv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxVrstaZiv.Name = "comboBoxVrstaZiv";
+            this.comboBoxVrstaZiv.Size = new System.Drawing.Size(244, 24);
+            this.comboBoxVrstaZiv.TabIndex = 31;
+            this.comboBoxVrstaZiv.ValueMember = "LjubimacID";
+            this.comboBoxVrstaZiv.Visible = false;
+            this.comboBoxVrstaZiv.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // bindingSourceLjubimac
             // 
@@ -409,15 +412,23 @@
             // 
             this.preglediTableAdapter.ClearBeforeFill = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(676, 13);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(240, 22);
+            this.textBox1.TabIndex = 34;
+            // 
             // FormKontaktZakazivanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(945, 486);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonDodajLjubimca);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxVrstaZiv);
             this.Controls.Add(this.labelIyborImena);
             this.Controls.Add(this.labelIzborVrste);
             this.Controls.Add(this.dateTimePickerrodj);
@@ -481,7 +492,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerrodj;
         private System.Windows.Forms.Label labelIzborVrste;
         private System.Windows.Forms.Label labelIyborImena;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxVrstaZiv;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button buttonDodajLjubimca;
         private VetSet1 vetSet11;
@@ -493,6 +504,7 @@
         private VetSet1TableAdapters.VeterinarTableAdapter veterinarTableAdapter1;
         private System.Windows.Forms.BindingSource bindingSourcePregled;
         private VetSet1TableAdapters.PreglediTableAdapter preglediTableAdapter;
- //       private UI_pokusaj.BazaDataSetTableAdapters.VeterinarTableAdapter veterinarTableAdapter;
+        private System.Windows.Forms.TextBox textBox1;
+        //       private UI_pokusaj.BazaDataSetTableAdapters.VeterinarTableAdapter veterinarTableAdapter;
     }
 }
