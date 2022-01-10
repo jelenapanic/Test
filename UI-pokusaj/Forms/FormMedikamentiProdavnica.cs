@@ -70,9 +70,9 @@ namespace UI_pokusaj.Forms
             }
             
 
-            /*  ovde flagPoruci=1, ako se klikne otkazi on proverava da li je fleg set na 1;
+            /*  ovde flagPorudzbina=1, ako se klikne "otkazi"--> proverava da li je fleg set na 1;
              *  ako jeste onda brise poslednju unetu porudzbinu. posto je opasno ovo, ograniciti da je porucivanje mogce
-             *  ako su sva polja popunjena, otkazi resetuje fleg i fleg postaje=0 sve dok se ne poruci nesto...
+             *  ako su sva polja popunjena i fleg setovan na 1,=> "otkazi" resetuje fleg i fleg postaje=0 sve dok se ne poruci nesto...
                          
              */
         }
