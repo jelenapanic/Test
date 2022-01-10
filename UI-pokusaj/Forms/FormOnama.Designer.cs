@@ -39,6 +39,7 @@ namespace UI_pokusaj.Forms
             this.bindingSourcePregledi = new System.Windows.Forms.BindingSource(this.components);
             this.ljubimacTableAdapter1 = new UI_pokusaj.VetSet1TableAdapters.LjubimacTableAdapter();
             this.preglediTableAdapter = new UI_pokusaj.VetSet1TableAdapters.PreglediTableAdapter();
+            this.listBoxTerapija = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLjubimci1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePregledi)).BeginInit();
@@ -59,11 +60,12 @@ namespace UI_pokusaj.Forms
             this.comboBox1.DataSource = this.bindingSourceLjubimci1;
             this.comboBox1.DisplayMember = "Ime";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(13, 36);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(392, 24);
+            this.comboBox1.Size = new System.Drawing.Size(392, 28);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.ValueMember = "LjubimacID";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -85,7 +87,7 @@ namespace UI_pokusaj.Forms
             this.label2.Location = new System.Drawing.Point(9, 8);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 22);
+            this.label2.Size = new System.Drawing.Size(152, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Izaberite životinju";
             // 
@@ -117,12 +119,27 @@ namespace UI_pokusaj.Forms
             // 
             this.preglediTableAdapter.ClearBeforeFill = true;
             // 
+            // listBoxTerapija
+            // 
+            this.listBoxTerapija.DataSource = this.bindingSourcePregledi;
+            this.listBoxTerapija.DisplayMember = "Primenjena terapija";
+            this.listBoxTerapija.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxTerapija.FormattingEnabled = true;
+            this.listBoxTerapija.ItemHeight = 25;
+            this.listBoxTerapija.Location = new System.Drawing.Point(454, 93);
+            this.listBoxTerapija.Margin = new System.Windows.Forms.Padding(4);
+            this.listBoxTerapija.Name = "listBoxTerapija";
+            this.listBoxTerapija.Size = new System.Drawing.Size(395, 429);
+            this.listBoxTerapija.TabIndex = 6;
+            this.listBoxTerapija.ValueMember = "Ljubimac";
+            // 
             // FormOnama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
-            this.ClientSize = new System.Drawing.Size(555, 711);
+            this.ClientSize = new System.Drawing.Size(1016, 711);
+            this.Controls.Add(this.listBoxTerapija);
             this.Controls.Add(this.listBoxISTORIJA);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
@@ -150,5 +167,6 @@ namespace UI_pokusaj.Forms
         private VetSet1TableAdapters.LjubimacTableAdapter ljubimacTableAdapter1;
         private System.Windows.Forms.BindingSource bindingSourcePregledi;
         private VetSet1TableAdapters.PreglediTableAdapter preglediTableAdapter;
+        private System.Windows.Forms.ListBox listBoxTerapija;
     }
 }
