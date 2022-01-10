@@ -108,7 +108,7 @@ namespace UI_pokusaj.Forms
                 FlagPorudzbina = 0; //resetuje fleg
                                     //brisi vrstu po id
                                     ////////////////////////////////////////////////////////
-                                    //ovo ne brise nego postavlja sve na 0 u tabelu za tu porudzbiu...----------------KAKO OBRISATI RED 
+                                    //-----KAKO OBRISATI RED 
 
                
 
