@@ -65,17 +65,16 @@ namespace UI_pokusaj
             {
                 loadform(new Forms.FormZdravlje());
                 labelBar1.Text = "Zdravlje";
-            }
+            }    
             
-            //---------------------------test
 
         }
         private void buttonMedikament_Click(object sender, EventArgs e)
         {
             loadform(new Forms.FormMedikamentiProdavnica());
             labelBar1.Text = "VetShop";
-            //----------------------test
-            btnFlag = 1;                        //test brisi
+           
+            btnFlag = 1;                       
             //lokalni flag---sluzi da zaustavi reset stranice prilikom ponovnog klika na dugme za otvaranje shopa
             buttonMedikament.Enabled = false;
 

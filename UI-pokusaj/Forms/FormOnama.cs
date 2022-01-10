@@ -18,7 +18,7 @@ namespace UI_pokusaj.Forms
         }
 
         private void FormOnama_Load(object sender, EventArgs e)
-        {
+        {           
             // TODO: This line of code loads data into the 'vetSet11.Pregledi' table. You can move, or remove it, as needed.
             this.preglediTableAdapter.Fill(this.vetSet11.Pregledi);
             // TODO: This line of code loads data into the 'vetSet11.Ljubimac' table. You can move, or remove it, as needed.
@@ -36,14 +36,11 @@ namespace UI_pokusaj.Forms
 
         private void listBoxISTORIJA_SelectedIndexChanged(object sender, EventArgs e)
         {
-           // bindingSourceLjubimci.Filter = string.Format("LjubimacID={0}", listBoxISTORIJA.SelectedValue ?? 0); //pravi bug|selekcijom el u listboxu ogranici pristup ljubimcima...
+           
            // razmotri mogucnost da ovo bude personalizovano| ulogovani korisnik moze videti istoriju samo za svoje zovotinje!!!!!!!!!!!
         }
 
-        private void bindingSourceRazlog_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
  
