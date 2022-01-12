@@ -147,6 +147,5 @@ namespace UI_pokusaj.Forms
         {
            //postoji samo zbog preuzimanja cene||| VRV postoji bolje resenje...
         }
-
     }
 }
