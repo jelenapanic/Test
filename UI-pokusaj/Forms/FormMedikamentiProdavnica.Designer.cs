@@ -30,6 +30,7 @@ namespace UI_pokusaj.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMedikamentiProdavnica));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxProizvodi = new System.Windows.Forms.ComboBox();
             this.bindingSourceShop1 = new System.Windows.Forms.BindingSource(this.components);
@@ -57,11 +58,13 @@ namespace UI_pokusaj.Forms
             this.shopTableAdapter1 = new UI_pokusaj.VetSet1TableAdapters.ShopTableAdapter();
             this.bindingSourcePorudzbina = new System.Windows.Forms.BindingSource(this.components);
             this.porudzbineTableAdapter = new UI_pokusaj.VetSet1TableAdapters.PorudzbineTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceShop1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCena1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePorudzbina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,6 +82,7 @@ namespace UI_pokusaj.Forms
             this.comboBoxProizvodi.DataSource = this.bindingSourceShop1;
             this.comboBoxProizvodi.DisplayMember = "Proizvod";
             this.comboBoxProizvodi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProizvodi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxProizvodi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxProizvodi.FormattingEnabled = true;
             this.comboBoxProizvodi.Location = new System.Drawing.Point(181, 13);
@@ -157,7 +161,7 @@ namespace UI_pokusaj.Forms
             // 
             this.textBoxCENA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxCENA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCENA.Location = new System.Drawing.Point(404, 95);
+            this.textBoxCENA.Location = new System.Drawing.Point(363, 95);
             this.textBoxCENA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCENA.Name = "textBoxCENA";
             this.textBoxCENA.Size = new System.Drawing.Size(171, 21);
@@ -169,7 +173,7 @@ namespace UI_pokusaj.Forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(582, 97);
+            this.label4.Location = new System.Drawing.Point(541, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 20);
             this.label4.TabIndex = 8;
@@ -177,11 +181,13 @@ namespace UI_pokusaj.Forms
             // 
             // btnPoruci
             // 
+            this.btnPoruci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPoruci.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPoruci.Location = new System.Drawing.Point(394, 390);
+            this.btnPoruci.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPoruci.Location = new System.Drawing.Point(409, 390);
             this.btnPoruci.Margin = new System.Windows.Forms.Padding(4);
             this.btnPoruci.Name = "btnPoruci";
-            this.btnPoruci.Size = new System.Drawing.Size(125, 41);
+            this.btnPoruci.Size = new System.Drawing.Size(167, 52);
             this.btnPoruci.TabIndex = 9;
             this.btnPoruci.Text = "Poruči";
             this.btnPoruci.UseVisualStyleBackColor = true;
@@ -205,7 +211,7 @@ namespace UI_pokusaj.Forms
             this.richTextBoxADRESA.Location = new System.Drawing.Point(180, 145);
             this.richTextBoxADRESA.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBoxADRESA.Name = "richTextBoxADRESA";
-            this.richTextBoxADRESA.Size = new System.Drawing.Size(395, 82);
+            this.richTextBoxADRESA.Size = new System.Drawing.Size(395, 69);
             this.richTextBoxADRESA.TabIndex = 12;
             this.richTextBoxADRESA.Text = "";
             // 
@@ -223,18 +229,18 @@ namespace UI_pokusaj.Forms
             // textBoxMejl
             // 
             this.textBoxMejl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxMejl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMejl.Location = new System.Drawing.Point(180, 324);
+            this.textBoxMejl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMejl.Location = new System.Drawing.Point(181, 327);
             this.textBoxMejl.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMejl.Name = "textBoxMejl";
-            this.textBoxMejl.Size = new System.Drawing.Size(395, 17);
+            this.textBoxMejl.Size = new System.Drawing.Size(395, 21);
             this.textBoxMejl.TabIndex = 19;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(11, 356);
+            this.label11.Location = new System.Drawing.Point(20, 349);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 24);
@@ -244,36 +250,38 @@ namespace UI_pokusaj.Forms
             // textBoxGrad
             // 
             this.textBoxGrad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxGrad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxGrad.Location = new System.Drawing.Point(181, 349);
+            this.textBoxGrad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxGrad.Location = new System.Drawing.Point(181, 352);
             this.textBoxGrad.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGrad.Name = "textBoxGrad";
-            this.textBoxGrad.Size = new System.Drawing.Size(394, 17);
+            this.textBoxGrad.Size = new System.Drawing.Size(395, 21);
             this.textBoxGrad.TabIndex = 24;
             // 
             // btnOtkaziKupovinu
             // 
+            this.btnOtkaziKupovinu.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnOtkaziKupovinu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOtkaziKupovinu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOtkaziKupovinu.Location = new System.Drawing.Point(247, 390);
+            this.btnOtkaziKupovinu.Location = new System.Drawing.Point(235, 390);
             this.btnOtkaziKupovinu.Margin = new System.Windows.Forms.Padding(4);
             this.btnOtkaziKupovinu.Name = "btnOtkaziKupovinu";
-            this.btnOtkaziKupovinu.Size = new System.Drawing.Size(125, 41);
+            this.btnOtkaziKupovinu.Size = new System.Drawing.Size(166, 52);
             this.btnOtkaziKupovinu.TabIndex = 25;
             this.btnOtkaziKupovinu.Text = "Otkaži";
-            this.btnOtkaziKupovinu.UseVisualStyleBackColor = true;
+            this.btnOtkaziKupovinu.UseVisualStyleBackColor = false;
             this.btnOtkaziKupovinu.Click += new System.EventHandler(this.btnOtkaziKupovinu_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioButtonOnline);
             this.groupBox1.Controls.Add(this.radioButtonPouzecem);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(20, 234);
+            this.groupBox1.Location = new System.Drawing.Point(20, 220);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(556, 81);
+            this.groupBox1.Size = new System.Drawing.Size(556, 99);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Način plaćanja";
@@ -333,12 +341,24 @@ namespace UI_pokusaj.Forms
             // 
             this.porudzbineTableAdapter.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(582, 145);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(320, 322);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormMedikamentiProdavnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
-            this.ClientSize = new System.Drawing.Size(872, 548);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(926, 564);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBoxCena);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnOtkaziKupovinu);
@@ -358,6 +378,7 @@ namespace UI_pokusaj.Forms
             this.Controls.Add(this.textBoxTrenutnaKolicina);
             this.Controls.Add(this.comboBoxProizvodi);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMedikamentiProdavnica";
@@ -369,6 +390,7 @@ namespace UI_pokusaj.Forms
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCena1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePorudzbina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,5 +425,6 @@ namespace UI_pokusaj.Forms
         private System.Windows.Forms.BindingSource bindingSourceCena1;
         private System.Windows.Forms.BindingSource bindingSourcePorudzbina;
         private VetSet1TableAdapters.PorudzbineTableAdapter porudzbineTableAdapter;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

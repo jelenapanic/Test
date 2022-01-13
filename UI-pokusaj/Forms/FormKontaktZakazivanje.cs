@@ -162,5 +162,10 @@ namespace UI_pokusaj.Forms
         {
 
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

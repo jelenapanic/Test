@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKontaktZakazivanje));
             this.labelVrstaZiv = new System.Windows.Forms.Label();
             this.labelVeterinar = new System.Windows.Forms.Label();
             this.textBoxRazlogPregledaUnos = new System.Windows.Forms.TextBox();
@@ -66,11 +67,15 @@
             this.bindingSourcePregled = new System.Windows.Forms.BindingSource(this.components);
             this.preglediTableAdapter = new UI_pokusaj.VetSet1TableAdapters.PreglediTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLjubimac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVlasnik1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePregled)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelVrstaZiv
@@ -372,6 +377,7 @@
             this.comboBox2.Size = new System.Drawing.Size(243, 24);
             this.comboBox2.TabIndex = 32;
             this.comboBox2.ValueMember = "LjubimacID";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // buttonDodajLjubimca
             // 
@@ -420,12 +426,34 @@
             this.textBox1.TabIndex = 34;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(417, 286);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 184);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(252, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(238, 205);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 36;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormKontaktZakazivanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(945, 486);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonDodajLjubimca);
             this.Controls.Add(this.comboBox2);
@@ -463,6 +491,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLjubimac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVlasnik1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePregled)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,6 +536,8 @@
         private System.Windows.Forms.BindingSource bindingSourcePregled;
         private VetSet1TableAdapters.PreglediTableAdapter preglediTableAdapter;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
         //       private UI_pokusaj.BazaDataSetTableAdapters.VeterinarTableAdapter veterinarTableAdapter;
     }
 }

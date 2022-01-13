@@ -17,7 +17,14 @@ namespace UI_pokusaj.Forms
             InitializeComponent();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void FormZdravlje_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'vetSet11.Veterinar' table. You can move, or remove it, as needed.
+            this.veterinarTableAdapter.Fill(this.vetSet11.Veterinar);
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
