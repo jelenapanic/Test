@@ -65,9 +65,9 @@ namespace UI_pokusaj.Forms
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(13, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 24);
+            this.label2.Size = new System.Drawing.Size(166, 30);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Ime veterinara";
+            this.label2.Text = "Ime veterinara:";
             // 
             // label3
             // 
@@ -75,9 +75,9 @@ namespace UI_pokusaj.Forms
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(13, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 24);
+            this.label3.Size = new System.Drawing.Size(214, 30);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Prezime veterinara";
+            this.label3.Text = "Prezime veterinara:";
             // 
             // label5
             // 
@@ -85,9 +85,9 @@ namespace UI_pokusaj.Forms
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(14, 138);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 24);
+            this.label5.Size = new System.Drawing.Size(165, 30);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Specijalizacija";
+            this.label5.Text = "Specijalizacija:";
             // 
             // label6
             // 
@@ -95,9 +95,9 @@ namespace UI_pokusaj.Forms
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(14, 171);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 24);
+            this.label6.Size = new System.Drawing.Size(149, 30);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Broj telefona";
+            this.label6.Text = "Broj telefona:";
             // 
             // comboBox1
             // 
@@ -131,7 +131,7 @@ namespace UI_pokusaj.Forms
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVeterinari, "Prezime", true));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(190, 101);
+            this.textBox1.Location = new System.Drawing.Point(190, 108);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(238, 21);
@@ -143,7 +143,7 @@ namespace UI_pokusaj.Forms
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVeterinari, "Specijalizacija", true));
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(190, 135);
+            this.textBox2.Location = new System.Drawing.Point(190, 141);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(238, 21);
@@ -155,11 +155,12 @@ namespace UI_pokusaj.Forms
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVeterinari, "Broj telefona", true));
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(190, 168);
+            this.textBox3.Location = new System.Drawing.Point(190, 174);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(238, 21);
             this.textBox3.TabIndex = 9;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // veterinarTableAdapter
             // 

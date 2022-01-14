@@ -48,6 +48,9 @@ namespace UI_pokusaj
             this.textBoxPN = new System.Windows.Forms.TextBox();
             this.buttonReg = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.vetSet11 = new UI_pokusaj.VetSet1();
+            this.vlasnikTableAdapter1 = new UI_pokusaj.VetSet1TableAdapters.VlasnikTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,9 +58,10 @@ namespace UI_pokusaj
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
-            this.label1.Location = new System.Drawing.Point(240, 25);
+            this.label1.Location = new System.Drawing.Point(320, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 30);
+            this.label1.Size = new System.Drawing.Size(275, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "DOBRODOŠLI";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -68,9 +72,10 @@ namespace UI_pokusaj
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
-            this.label2.Location = new System.Drawing.Point(41, 83);
+            this.label2.Location = new System.Drawing.Point(55, 102);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(113, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Korisničko ime";
             // 
@@ -79,11 +84,12 @@ namespace UI_pokusaj
             this.textBoxUsername1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.textBoxUsername1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUsername1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername1.Location = new System.Drawing.Point(44, 99);
+            this.textBoxUsername1.Location = new System.Drawing.Point(59, 122);
+            this.textBoxUsername1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxUsername1.MaxLength = 40;
             this.textBoxUsername1.Multiline = true;
             this.textBoxUsername1.Name = "textBoxUsername1";
-            this.textBoxUsername1.Size = new System.Drawing.Size(200, 20);
+            this.textBoxUsername1.Size = new System.Drawing.Size(267, 25);
             this.textBoxUsername1.TabIndex = 2;
             this.textBoxUsername1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -93,9 +99,10 @@ namespace UI_pokusaj
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
-            this.label3.Location = new System.Drawing.Point(41, 134);
+            this.label3.Location = new System.Drawing.Point(55, 165);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Lozinka";
             // 
@@ -103,11 +110,12 @@ namespace UI_pokusaj
             // 
             this.textBoxPW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.textBoxPW.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPW.Location = new System.Drawing.Point(44, 150);
+            this.textBoxPW.Location = new System.Drawing.Point(59, 185);
+            this.textBoxPW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPW.Multiline = true;
             this.textBoxPW.Name = "textBoxPW";
             this.textBoxPW.PasswordChar = '•';
-            this.textBoxPW.Size = new System.Drawing.Size(200, 20);
+            this.textBoxPW.Size = new System.Drawing.Size(267, 25);
             this.textBoxPW.TabIndex = 2;
             this.textBoxPW.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -117,9 +125,10 @@ namespace UI_pokusaj
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
-            this.label4.Location = new System.Drawing.Point(41, 183);
+            this.label4.Location = new System.Drawing.Point(55, 225);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 13);
+            this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Potvrdi lozinku";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -128,11 +137,12 @@ namespace UI_pokusaj
             // 
             this.textBoxConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.textBoxConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxConfirm.Location = new System.Drawing.Point(44, 199);
+            this.textBoxConfirm.Location = new System.Drawing.Point(59, 245);
+            this.textBoxConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxConfirm.Multiline = true;
             this.textBoxConfirm.Name = "textBoxConfirm";
             this.textBoxConfirm.PasswordChar = '•';
-            this.textBoxConfirm.Size = new System.Drawing.Size(200, 20);
+            this.textBoxConfirm.Size = new System.Drawing.Size(267, 25);
             this.textBoxConfirm.TabIndex = 2;
             this.textBoxConfirm.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -142,9 +152,10 @@ namespace UI_pokusaj
             this.checkBoxShow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
-            this.checkBoxShow.Location = new System.Drawing.Point(136, 225);
+            this.checkBoxShow.Location = new System.Drawing.Point(181, 277);
+            this.checkBoxShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxShow.Name = "checkBoxShow";
-            this.checkBoxShow.Size = new System.Drawing.Size(108, 17);
+            this.checkBoxShow.Size = new System.Drawing.Size(135, 21);
             this.checkBoxShow.TabIndex = 3;
             this.checkBoxShow.Text = "Prikaži lozinku";
             this.checkBoxShow.UseVisualStyleBackColor = true;
@@ -156,9 +167,10 @@ namespace UI_pokusaj
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
-            this.label5.Location = new System.Drawing.Point(432, 76);
+            this.label5.Location = new System.Drawing.Point(576, 94);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 13);
+            this.label5.Size = new System.Drawing.Size(33, 17);
             this.label5.TabIndex = 1;
             this.label5.Text = "Ime";
             // 
@@ -166,10 +178,11 @@ namespace UI_pokusaj
             // 
             this.textBoxNAME.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.textBoxNAME.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNAME.Location = new System.Drawing.Point(435, 92);
+            this.textBoxNAME.Location = new System.Drawing.Point(580, 113);
+            this.textBoxNAME.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNAME.Multiline = true;
             this.textBoxNAME.Name = "textBoxNAME";
-            this.textBoxNAME.Size = new System.Drawing.Size(200, 20);
+            this.textBoxNAME.Size = new System.Drawing.Size(267, 25);
             this.textBoxNAME.TabIndex = 2;
             this.textBoxNAME.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -179,9 +192,10 @@ namespace UI_pokusaj
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
-            this.label6.Location = new System.Drawing.Point(432, 134);
+            this.label6.Location = new System.Drawing.Point(576, 165);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.Size = new System.Drawing.Size(66, 17);
             this.label6.TabIndex = 1;
             this.label6.Text = "Prezime";
             // 
@@ -189,10 +203,11 @@ namespace UI_pokusaj
             // 
             this.textBoxSURNAME.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.textBoxSURNAME.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSURNAME.Location = new System.Drawing.Point(435, 150);
+            this.textBoxSURNAME.Location = new System.Drawing.Point(580, 185);
+            this.textBoxSURNAME.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxSURNAME.Multiline = true;
             this.textBoxSURNAME.Name = "textBoxSURNAME";
-            this.textBoxSURNAME.Size = new System.Drawing.Size(200, 20);
+            this.textBoxSURNAME.Size = new System.Drawing.Size(267, 25);
             this.textBoxSURNAME.TabIndex = 2;
             this.textBoxSURNAME.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -202,9 +217,10 @@ namespace UI_pokusaj
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
-            this.label7.Location = new System.Drawing.Point(432, 183);
+            this.label7.Location = new System.Drawing.Point(576, 225);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 13);
+            this.label7.Size = new System.Drawing.Size(44, 17);
             this.label7.TabIndex = 1;
             this.label7.Text = "Grad";
             this.label7.Click += new System.EventHandler(this.label4_Click);
@@ -213,10 +229,11 @@ namespace UI_pokusaj
             // 
             this.textBoxCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.textBoxCity.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCity.Location = new System.Drawing.Point(435, 199);
+            this.textBoxCity.Location = new System.Drawing.Point(580, 245);
+            this.textBoxCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCity.Multiline = true;
             this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(200, 20);
+            this.textBoxCity.Size = new System.Drawing.Size(267, 25);
             this.textBoxCity.TabIndex = 2;
             this.textBoxCity.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -226,9 +243,10 @@ namespace UI_pokusaj
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
-            this.label8.Location = new System.Drawing.Point(432, 232);
+            this.label8.Location = new System.Drawing.Point(576, 286);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.Size = new System.Drawing.Size(59, 17);
             this.label8.TabIndex = 1;
             this.label8.Text = "Adresa";
             this.label8.Click += new System.EventHandler(this.label4_Click);
@@ -237,10 +255,11 @@ namespace UI_pokusaj
             // 
             this.textBoxAdress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.textBoxAdress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAdress.Location = new System.Drawing.Point(435, 248);
+            this.textBoxAdress.Location = new System.Drawing.Point(580, 305);
+            this.textBoxAdress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxAdress.Multiline = true;
             this.textBoxAdress.Name = "textBoxAdress";
-            this.textBoxAdress.Size = new System.Drawing.Size(200, 20);
+            this.textBoxAdress.Size = new System.Drawing.Size(267, 25);
             this.textBoxAdress.TabIndex = 2;
             this.textBoxAdress.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -250,9 +269,10 @@ namespace UI_pokusaj
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
-            this.label9.Location = new System.Drawing.Point(432, 280);
+            this.label9.Location = new System.Drawing.Point(576, 345);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 13);
+            this.label9.Size = new System.Drawing.Size(101, 17);
             this.label9.TabIndex = 1;
             this.label9.Text = "Broj telefona";
             this.label9.Click += new System.EventHandler(this.label4_Click);
@@ -261,10 +281,11 @@ namespace UI_pokusaj
             // 
             this.textBoxPN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.textBoxPN.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPN.Location = new System.Drawing.Point(435, 296);
+            this.textBoxPN.Location = new System.Drawing.Point(580, 364);
+            this.textBoxPN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPN.Multiline = true;
             this.textBoxPN.Name = "textBoxPN";
-            this.textBoxPN.Size = new System.Drawing.Size(200, 20);
+            this.textBoxPN.Size = new System.Drawing.Size(267, 25);
             this.textBoxPN.TabIndex = 2;
             this.textBoxPN.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBoxPN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPN_KeyPress);
@@ -276,9 +297,10 @@ namespace UI_pokusaj
             this.buttonReg.FlatAppearance.BorderSize = 0;
             this.buttonReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReg.Location = new System.Drawing.Point(239, 322);
+            this.buttonReg.Location = new System.Drawing.Point(319, 396);
+            this.buttonReg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonReg.Name = "buttonReg";
-            this.buttonReg.Size = new System.Drawing.Size(220, 30);
+            this.buttonReg.Size = new System.Drawing.Size(293, 37);
             this.buttonReg.TabIndex = 4;
             this.buttonReg.Text = "DALJE...";
             this.buttonReg.UseVisualStyleBackColor = false;
@@ -289,19 +311,29 @@ namespace UI_pokusaj
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
-            this.label10.Location = new System.Drawing.Point(274, 355);
+            this.label10.Location = new System.Drawing.Point(365, 437);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(160, 13);
+            this.label10.Size = new System.Drawing.Size(204, 17);
             this.label10.TabIndex = 5;
             this.label10.Text = "Već imaš nalog? Prijavi se.";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
+            // vetSet11
+            // 
+            this.vetSet11.DataSetName = "VetSet1";
+            this.vetSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vlasnikTableAdapter1
+            // 
+            this.vlasnikTableAdapter1.ClearBeforeFill = true;
+            // 
             // FormReg
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(670, 387);
+            this.ClientSize = new System.Drawing.Size(893, 476);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.buttonReg);
             this.Controls.Add(this.checkBoxShow);
@@ -324,10 +356,12 @@ namespace UI_pokusaj
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormReg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReg";
             this.Load += new System.EventHandler(this.FormReg_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,5 +389,7 @@ namespace UI_pokusaj
         private System.Windows.Forms.TextBox textBoxPN;
         private System.Windows.Forms.Button buttonReg;
         private System.Windows.Forms.Label label10;
+        private VetSet1 vetSet11;
+        private VetSet1TableAdapters.VlasnikTableAdapter vlasnikTableAdapter1;
     }
 }

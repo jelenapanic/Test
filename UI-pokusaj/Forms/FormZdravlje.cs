@@ -28,5 +28,10 @@ namespace UI_pokusaj.Forms
         {
 
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
