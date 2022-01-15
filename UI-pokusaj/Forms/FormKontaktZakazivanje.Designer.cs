@@ -58,7 +58,7 @@
             this.labelIyborImena = new System.Windows.Forms.Label();
             this.comboBoxVrstaZiv = new System.Windows.Forms.ComboBox();
             this.bindingSourceLjubimac = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxImeZiv = new System.Windows.Forms.ComboBox();
             this.buttonDodajLjubimca = new System.Windows.Forms.Button();
             this.bindingSourceVlasnik1 = new System.Windows.Forms.BindingSource(this.components);
             this.vlasnikTableAdapter1 = new UI_pokusaj.VetSet1TableAdapters.VlasnikTableAdapter();
@@ -66,7 +66,7 @@
             this.veterinarTableAdapter1 = new UI_pokusaj.VetSet1TableAdapters.VeterinarTableAdapter();
             this.bindingSourcePregled = new System.Windows.Forms.BindingSource(this.components);
             this.preglediTableAdapter = new UI_pokusaj.VetSet1TableAdapters.PreglediTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxVrsta = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVet)).BeginInit();
@@ -84,7 +84,7 @@
             this.labelVrstaZiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVrstaZiv.Location = new System.Drawing.Point(3, 245);
             this.labelVrstaZiv.Name = "labelVrstaZiv";
-            this.labelVrstaZiv.Size = new System.Drawing.Size(129, 24);
+            this.labelVrstaZiv.Size = new System.Drawing.Size(126, 22);
             this.labelVrstaZiv.TabIndex = 3;
             this.labelVrstaZiv.Text = "Vrsta životinje:";
             this.labelVrstaZiv.Visible = false;
@@ -95,13 +95,13 @@
             this.labelVeterinar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVeterinar.Location = new System.Drawing.Point(496, 137);
             this.labelVeterinar.Name = "labelVeterinar";
-            this.labelVeterinar.Size = new System.Drawing.Size(91, 24);
+            this.labelVeterinar.Size = new System.Drawing.Size(88, 22);
             this.labelVeterinar.TabIndex = 5;
             this.labelVeterinar.Text = "Veterinar:";
             // 
             // textBoxRazlogPregledaUnos
             // 
-            this.textBoxRazlogPregledaUnos.Location = new System.Drawing.Point(676, 95);
+            this.textBoxRazlogPregledaUnos.Location = new System.Drawing.Point(673, 95);
             this.textBoxRazlogPregledaUnos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRazlogPregledaUnos.Name = "textBoxRazlogPregledaUnos";
             this.textBoxRazlogPregledaUnos.Size = new System.Drawing.Size(243, 22);
@@ -114,17 +114,19 @@
             this.labelRazlogPregleda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRazlogPregleda.Location = new System.Drawing.Point(496, 95);
             this.labelRazlogPregleda.Name = "labelRazlogPregleda";
-            this.labelRazlogPregleda.Size = new System.Drawing.Size(153, 24);
+            this.labelRazlogPregleda.Size = new System.Drawing.Size(145, 22);
             this.labelRazlogPregleda.TabIndex = 7;
             this.labelRazlogPregleda.Text = "Razlog pregleda:";
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(673, 181);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(243, 22);
             this.dateTimePicker1.TabIndex = 8;
+            this.dateTimePicker1.Value = new System.DateTime(2022, 1, 13, 23, 32, 52, 0);
             // 
             // labelDatum
             // 
@@ -132,13 +134,15 @@
             this.labelDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDatum.Location = new System.Drawing.Point(496, 183);
             this.labelDatum.Name = "labelDatum";
-            this.labelDatum.Size = new System.Drawing.Size(69, 24);
+            this.labelDatum.Size = new System.Drawing.Size(67, 22);
             this.labelDatum.TabIndex = 9;
             this.labelDatum.Text = "Datum:";
             // 
             // buttonOtkaziPregled
             // 
-            this.buttonOtkaziPregled.Location = new System.Drawing.Point(673, 352);
+            this.buttonOtkaziPregled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOtkaziPregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.buttonOtkaziPregled.Location = new System.Drawing.Point(673, 224);
             this.buttonOtkaziPregled.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonOtkaziPregled.Name = "buttonOtkaziPregled";
             this.buttonOtkaziPregled.Size = new System.Drawing.Size(119, 43);
@@ -149,7 +153,9 @@
             // 
             // buttonZakazi
             // 
-            this.buttonZakazi.Location = new System.Drawing.Point(799, 352);
+            this.buttonZakazi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonZakazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.buttonZakazi.Location = new System.Drawing.Point(798, 224);
             this.buttonZakazi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonZakazi.Name = "buttonZakazi";
             this.buttonZakazi.Size = new System.Drawing.Size(119, 43);
@@ -174,7 +180,7 @@
             this.labelImeZiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImeZiv.Location = new System.Drawing.Point(3, 207);
             this.labelImeZiv.Name = "labelImeZiv";
-            this.labelImeZiv.Size = new System.Drawing.Size(118, 24);
+            this.labelImeZiv.Size = new System.Drawing.Size(112, 22);
             this.labelImeZiv.TabIndex = 15;
             this.labelImeZiv.Text = "Ime životinje:";
             this.labelImeZiv.Visible = false;
@@ -219,7 +225,7 @@
             this.labelPolZiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelPolZiv.Location = new System.Drawing.Point(3, 331);
             this.labelPolZiv.Name = "labelPolZiv";
-            this.labelPolZiv.Size = new System.Drawing.Size(42, 24);
+            this.labelPolZiv.Size = new System.Drawing.Size(41, 22);
             this.labelPolZiv.TabIndex = 18;
             this.labelPolZiv.Text = "Pol:";
             this.labelPolZiv.Visible = false;
@@ -230,7 +236,7 @@
             this.labelDatumRodj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelDatumRodj.Location = new System.Drawing.Point(3, 370);
             this.labelDatumRodj.Name = "labelDatumRodj";
-            this.labelDatumRodj.Size = new System.Drawing.Size(139, 24);
+            this.labelDatumRodj.Size = new System.Drawing.Size(132, 22);
             this.labelDatumRodj.TabIndex = 19;
             this.labelDatumRodj.Text = "Datum rođenja:";
             this.labelDatumRodj.Visible = false;
@@ -241,7 +247,7 @@
             this.labelRasaZiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelRasaZiv.Location = new System.Drawing.Point(3, 286);
             this.labelRasaZiv.Name = "labelRasaZiv";
-            this.labelRasaZiv.Size = new System.Drawing.Size(129, 24);
+            this.labelRasaZiv.Size = new System.Drawing.Size(126, 22);
             this.labelRasaZiv.TabIndex = 21;
             this.labelRasaZiv.Text = "Rasa životinje:";
             this.labelRasaZiv.Visible = false;
@@ -253,7 +259,7 @@
             this.labelNoviLjubimac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelNoviLjubimac.Location = new System.Drawing.Point(103, 44);
             this.labelNoviLjubimac.Name = "labelNoviLjubimac";
-            this.labelNoviLjubimac.Size = new System.Drawing.Size(133, 24);
+            this.labelNoviLjubimac.Size = new System.Drawing.Size(126, 22);
             this.labelNoviLjubimac.TabIndex = 22;
             this.labelNoviLjubimac.Text = "Novi ljubimac?";
             // 
@@ -295,7 +301,7 @@
             this.radioButtonPolM.Location = new System.Drawing.Point(155, 329);
             this.radioButtonPolM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonPolM.Name = "radioButtonPolM";
-            this.radioButtonPolM.Size = new System.Drawing.Size(47, 28);
+            this.radioButtonPolM.Size = new System.Drawing.Size(45, 26);
             this.radioButtonPolM.TabIndex = 26;
             this.radioButtonPolM.TabStop = true;
             this.radioButtonPolM.Text = "M";
@@ -309,7 +315,7 @@
             this.radioButtonPolZ.Location = new System.Drawing.Point(205, 329);
             this.radioButtonPolZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonPolZ.Name = "radioButtonPolZ";
-            this.radioButtonPolZ.Size = new System.Drawing.Size(43, 28);
+            this.radioButtonPolZ.Size = new System.Drawing.Size(42, 26);
             this.radioButtonPolZ.TabIndex = 27;
             this.radioButtonPolZ.TabStop = true;
             this.radioButtonPolZ.Text = "Ž";
@@ -318,6 +324,7 @@
             // 
             // dateTimePickerrodj
             // 
+            this.dateTimePickerrodj.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerrodj.Location = new System.Drawing.Point(141, 370);
             this.dateTimePickerrodj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerrodj.Name = "dateTimePickerrodj";
@@ -329,9 +336,9 @@
             // 
             this.labelIzborVrste.AutoSize = true;
             this.labelIzborVrste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.labelIzborVrste.Location = new System.Drawing.Point(496, 14);
+            this.labelIzborVrste.Location = new System.Drawing.Point(496, 54);
             this.labelIzborVrste.Name = "labelIzborVrste";
-            this.labelIzborVrste.Size = new System.Drawing.Size(129, 24);
+            this.labelIzborVrste.Size = new System.Drawing.Size(126, 22);
             this.labelIzborVrste.TabIndex = 29;
             this.labelIzborVrste.Text = "Vrsta životinje:";
             // 
@@ -339,9 +346,9 @@
             // 
             this.labelIyborImena.AutoSize = true;
             this.labelIyborImena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.labelIyborImena.Location = new System.Drawing.Point(496, 54);
+            this.labelIyborImena.Location = new System.Drawing.Point(496, 13);
             this.labelIyborImena.Name = "labelIyborImena";
-            this.labelIyborImena.Size = new System.Drawing.Size(118, 24);
+            this.labelIyborImena.Size = new System.Drawing.Size(112, 22);
             this.labelIyborImena.TabIndex = 30;
             this.labelIyborImena.Text = "Ime životinje:";
             // 
@@ -351,12 +358,12 @@
             this.comboBoxVrstaZiv.DisplayMember = "Vrsta";
             this.comboBoxVrstaZiv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVrstaZiv.FormattingEnabled = true;
-            this.comboBoxVrstaZiv.Location = new System.Drawing.Point(491, 245);
+            this.comboBoxVrstaZiv.Location = new System.Drawing.Point(468, 451);
             this.comboBoxVrstaZiv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxVrstaZiv.Name = "comboBoxVrstaZiv";
             this.comboBoxVrstaZiv.Size = new System.Drawing.Size(244, 24);
             this.comboBoxVrstaZiv.TabIndex = 31;
-            this.comboBoxVrstaZiv.ValueMember = "LjubimacID";
+            this.comboBoxVrstaZiv.ValueMember = "Vrsta";
             this.comboBoxVrstaZiv.Visible = false;
             this.comboBoxVrstaZiv.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -365,27 +372,29 @@
             this.bindingSourceLjubimac.DataMember = "Ljubimac";
             this.bindingSourceLjubimac.DataSource = this.vetSet11;
             // 
-            // comboBox2
+            // comboBoxImeZiv
             // 
-            this.comboBox2.DataSource = this.bindingSourceLjubimac;
-            this.comboBox2.DisplayMember = "Ime";
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(676, 50);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(243, 24);
-            this.comboBox2.TabIndex = 32;
-            this.comboBox2.ValueMember = "LjubimacID";
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBoxImeZiv.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBoxImeZiv.DataSource = this.bindingSourceLjubimac;
+            this.comboBoxImeZiv.DisplayMember = "Ime";
+            this.comboBoxImeZiv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxImeZiv.FormattingEnabled = true;
+            this.comboBoxImeZiv.Location = new System.Drawing.Point(673, 11);
+            this.comboBoxImeZiv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxImeZiv.Name = "comboBoxImeZiv";
+            this.comboBoxImeZiv.Size = new System.Drawing.Size(243, 24);
+            this.comboBoxImeZiv.TabIndex = 32;
+            this.comboBoxImeZiv.ValueMember = "LjubimacID";
+            this.comboBoxImeZiv.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // buttonDodajLjubimca
             // 
+            this.buttonDodajLjubimca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDodajLjubimca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.buttonDodajLjubimca.Location = new System.Drawing.Point(141, 416);
             this.buttonDodajLjubimca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDodajLjubimca.Name = "buttonDodajLjubimca";
-            this.buttonDodajLjubimca.Size = new System.Drawing.Size(75, 33);
+            this.buttonDodajLjubimca.Size = new System.Drawing.Size(88, 33);
             this.buttonDodajLjubimca.TabIndex = 33;
             this.buttonDodajLjubimca.Text = "Dodaj ljubimca";
             this.buttonDodajLjubimca.UseVisualStyleBackColor = true;
@@ -418,18 +427,19 @@
             // 
             this.preglediTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox1
+            // textBoxVrsta
             // 
-            this.textBox1.Location = new System.Drawing.Point(676, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 22);
-            this.textBox1.TabIndex = 34;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxVrsta.Location = new System.Drawing.Point(673, 56);
+            this.textBoxVrsta.Name = "textBoxVrsta";
+            this.textBoxVrsta.ReadOnly = true;
+            this.textBoxVrsta.Size = new System.Drawing.Size(240, 22);
+            this.textBoxVrsta.TabIndex = 34;
+            this.textBoxVrsta.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(417, 286);
+            this.pictureBox1.Location = new System.Drawing.Point(433, 233);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(208, 184);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -454,9 +464,9 @@
             this.ClientSize = new System.Drawing.Size(945, 486);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxVrsta);
             this.Controls.Add(this.buttonDodajLjubimca);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBoxImeZiv);
             this.Controls.Add(this.comboBoxVrstaZiv);
             this.Controls.Add(this.labelIyborImena);
             this.Controls.Add(this.labelIzborVrste);
@@ -524,7 +534,7 @@
         private System.Windows.Forms.Label labelIzborVrste;
         private System.Windows.Forms.Label labelIyborImena;
         private System.Windows.Forms.ComboBox comboBoxVrstaZiv;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxImeZiv;
         private System.Windows.Forms.Button buttonDodajLjubimca;
         private VetSet1 vetSet11;
         private System.Windows.Forms.BindingSource bindingSourceVlasnik1;
@@ -535,7 +545,7 @@
         private VetSet1TableAdapters.VeterinarTableAdapter veterinarTableAdapter1;
         private System.Windows.Forms.BindingSource bindingSourcePregled;
         private VetSet1TableAdapters.PreglediTableAdapter preglediTableAdapter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxVrsta;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         //       private UI_pokusaj.BazaDataSetTableAdapters.VeterinarTableAdapter veterinarTableAdapter;

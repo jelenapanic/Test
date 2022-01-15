@@ -16,11 +16,7 @@ namespace UI_pokusaj.Forms
         {
             InitializeComponent();
         }
-        private void bindingSourceZivotinja_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        int FlagZakazi = 0;
         private void FormKontaktZakazivanje_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'vetSet11.Pregledi' table. You can move, or remove it, as needed.
@@ -35,10 +31,7 @@ namespace UI_pokusaj.Forms
 
         }
 
-        private void textBoxVlasnik_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void textBoxUnosVrsteZivotinje_TextChanged(object sender, EventArgs e)
         {
@@ -60,26 +53,38 @@ namespace UI_pokusaj.Forms
 
         }
 
-        private void textBoxBrojTelefonaUnos_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonZakazi_Click(object sender, EventArgs e)
         {
-            //kad se preuredi baza dodaj sve
-            if (textBoxRazlogPregledaUnos.Text != "")
+            
+            if (textBoxRazlogPregledaUnos.Text != "" && textBoxVrsta.Text != "" && comboBoxImeZiv.Text != "" && comboBoxIzborVeterinara.Text != "" )
             {
-                //  var row = bazaDataSet1.Pregledi.NewPregledRow();
+                var row = vetSet11.Pregledi.NewPreglediRow();
+                row.Ljubimac = comboBoxImeZiv.SelectedIndex;
+                row.Veterinar = comboBoxIzborVeterinara.SelectedIndex;
+                row.Razlog = textBoxRazlogPregledaUnos.Text;
+                row.Datum_Pregleda = dateTimePicker1.Value;
+                row.Vrsta_životinje = textBoxVrsta.Text;
+                    vetSet11.Pregledi.AddPreglediRow(row);
+                    preglediTableAdapter.Update(vetSet11);
 
+                MessageBox.Show($"Zakazali ste pregled za ljubimca koji se zove {comboBoxImeZiv.Text} , kod veterinara sa imenom {comboBoxIzborVeterinara.Text}.", " ", MessageBoxButtons.OK);
+                comboBoxImeZiv.ResetText();
+                comboBoxIzborVeterinara.ResetText();
+                textBoxRazlogPregledaUnos.Clear();
+                textBoxVrsta.Clear();
+                dateTimePicker1.ResetText();
+                    FlagZakazi = 1;
             }
-
-
-
             else
             {
                 MessageBox.Show("Popunite sva polja!");
             }
+
+
+    
+
+
+
         }
 
         private void buttonOtkaziPregled_Click(object sender, EventArgs e)
@@ -156,16 +161,23 @@ namespace UI_pokusaj.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBoxImeZiv.SelectedIndex != -1)
+            {
+                textBoxVrsta.Text=comboBoxVrstaZiv.Text.Trim();
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
+    
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //  textBoxVrsta.Text = comboBoxVrstaZiv.ValueMember;
+            //  textBoxVrsta.Text = comboBoxVrstaZiv.Text;
+            if (comboBoxVrstaZiv.SelectedItem != null)
+                textBoxVrsta.Text = comboBoxVrstaZiv.Text;
         }
     }
 }

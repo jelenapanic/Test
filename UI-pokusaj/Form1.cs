@@ -28,9 +28,8 @@ namespace UI_pokusaj
 
         //--------------------------test
         int btnFlag = 0;
+        int ZakaziFlag = 0;
         //--------------------------test
-
-
     //-----------------------------------------------------------
     public void loadform(object Form)
         {
@@ -44,82 +43,100 @@ namespace UI_pokusaj
             f.Show();
 
         }
-        //----------------------------------------------------------
+    //-----------------------------------------------------------
         private void buttonZdravlje_Click(object sender, EventArgs e)
         {
 
             //---------------------------test
-            if (btnFlag == 1)
+            if (btnFlag == 1 || ZakaziFlag ==1)
             {
-                var res = MessageBox.Show("Da li ste sigurni? Korpa ce biti prazna", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var res = MessageBox.Show("Da li ste sigurni? Vaši izbori neće biti zabeleženi!", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
        //             MessageBox.Show($"Kliknuto je yes Flag={btnFlag}"); //provera /obrisati u konacnoj fazi
                     loadform(new Forms.FormZdravlje());
                     labelBar1.Text = "Zdravlje";
-                    btnFlag = 0;//reset flaga
+                    btnFlag = 0;//reset flagova
+                    ZakaziFlag = 0;
                     buttonMedikament.Enabled = true;
+                    buttonZakazi.Enabled = true;
                 }
             }
             else
             {
                 loadform(new Forms.FormZdravlje());
                 labelBar1.Text = "Zdravlje";
-            }    
-            
-
+            }        
         }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void buttonMedikament_Click(object sender, EventArgs e)
         {
-            loadform(new Forms.FormMedikamentiProdavnica());
-            labelBar1.Text = "VetShop";
-           
-            btnFlag = 1;                       
-            //lokalni flag---sluzi da zaustavi reset stranice prilikom ponovnog klika na dugme za otvaranje shopa
-            buttonMedikament.Enabled = false;
-
-
-            //----------------------test        
+            if (ZakaziFlag == 1) 
+            {
+                var res = MessageBox.Show("Da li ste sigurni? Vaši izbori neće biti zabeleženi!", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    loadform(new Forms.FormMedikamentiProdavnica());
+                    labelBar1.Text = "VetShop";
+                        btnFlag = 1; //lokalni flag---sluzi da zaustavi reset stranice prilikom ponovnog klika na dugme za otvaranje shopa
+                        buttonMedikament.Enabled = false;
+                        buttonZakazi.Enabled = true;
+                    ZakaziFlag = 0;
+                }
+            } 
+            else 
+            {
+                loadform(new Forms.FormMedikamentiProdavnica());
+                labelBar1.Text = "VetShop";
+                ZakaziFlag = 0;
+                btnFlag = 1;
+                buttonMedikament.Enabled = false;
+                buttonZakazi.Enabled = true;
+                /*otvori normalno i resi fleg*/
+            }      
         }
         private void buttonZakazi_Click(object sender, EventArgs e)
         {
-            //-------------------------------------------staro
-            //loadform(new Forms.FormKontaktZakazivanje());
-            //labelBar1.Text = "Zakazivanje";
-            //-------------------------------------------staro
-            //---------------------------test
             if (btnFlag == 1)
             {
-                var res = MessageBox.Show("Da li ste sigurni? Korpa ce biti prazna", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var res = MessageBox.Show("Da li ste sigurni? Vaši izbori neće biti zabeleženi!", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
                     loadform(new Forms.FormKontaktZakazivanje());
                     labelBar1.Text = "Zakazivanje";
                     btnFlag = 0;//reset flaga
                     buttonMedikament.Enabled = true;
+                    ZakaziFlag = 1;
+                    buttonZakazi.Enabled = false;
                 }
             }
             else
             {
                 loadform(new Forms.FormKontaktZakazivanje());
                 labelBar1.Text = "Zakazivanje";
+                ZakaziFlag = 1;
+                btnFlag = 0;
+                buttonZakazi.Enabled = false;
+                buttonMedikament.Enabled = true;
             }
+          
 
             //---------------------------test
         }
         private void buttonZivotinje_Click(object sender, EventArgs e)
         {
-            //loadform(new Forms.FormOnama());
-            //labelBar1.Text = "Istorija vaseg ljubimca";
-            if (btnFlag == 1)
+            if (btnFlag == 1 || ZakaziFlag==1)
             {
-                var res = MessageBox.Show("Da li ste sigurni? Korpa ce biti prazna", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var res = MessageBox.Show("Da li ste sigurni? Vaši izbori neće biti zabeleženi!", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
                     loadform(new Forms.FormOnama());
                     labelBar1.Text = "Istorija vaseg ljubimca";
                     btnFlag = 0;//reset flaga
+                    ZakaziFlag = 0;
                     buttonMedikament.Enabled = true;
+                    buttonZakazi.Enabled = true;
                 }
             }
             else
@@ -150,8 +167,6 @@ namespace UI_pokusaj
             SendMessage(this.Handle, 0x112, 0xf012, 0);
 
         }
-
-
         private void buttonEXIT_Click(object sender, EventArgs e)
         {
             Close();
