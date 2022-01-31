@@ -65,7 +65,7 @@ namespace UI_pokusaj.Forms
                 row.Datum_Pregleda = dateTimePicker1.Value;
                 row.Vrsta_životinje = textBoxVrsta.Text;
                     vetSet11.Pregledi.AddPreglediRow(row);
-                    preglediTableAdapter.Update(vetSet11);
+                    preglediTableAdapter.Update(vetSet11);     ///---------problem sa upisom dodatog ljubimca u bazu...
 
                 MessageBox.Show($"Zakazali ste pregled za ljubimca koji se zove {comboBoxImeZiv.Text} , kod veterinara sa imenom {comboBoxIzborVeterinara.Text}.", " ", MessageBoxButtons.OK);
                 comboBoxImeZiv.ResetText();
@@ -127,7 +127,7 @@ namespace UI_pokusaj.Forms
                 else row.Pol = "M";
                 row.Rodjendan = dateTimePickerrodj.Value;
                 //vet?????
-                //vlasnik nekako nzm
+                //vlasnik nekako nzm------------------------------------------problem
                 vetSet11.Ljubimac.AddLjubimacRow(row);
                 ljubimacTableAdapter1.Update(vetSet11);
 

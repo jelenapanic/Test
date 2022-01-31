@@ -43,17 +43,22 @@ namespace UI_pokusaj.Forms
             this.listBoxTerapija = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.bindingSourceVlasnik = new System.Windows.Forms.BindingSource(this.components);
+            this.vlasnikTableAdapter = new UI_pokusaj.VetSet1TableAdapters.VlasnikTableAdapter();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLjubimci1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePregledi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVlasnik)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 64);
+            this.label1.Location = new System.Drawing.Point(10, 164);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 25);
             this.label1.TabIndex = 1;
@@ -69,7 +74,7 @@ namespace UI_pokusaj.Forms
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 36);
+            this.comboBox1.Location = new System.Drawing.Point(11, 136);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(309, 28);
@@ -91,7 +96,7 @@ namespace UI_pokusaj.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 8);
+            this.label2.Location = new System.Drawing.Point(7, 108);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(152, 24);
@@ -107,12 +112,12 @@ namespace UI_pokusaj.Forms
             this.listBoxISTORIJA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxISTORIJA.FormattingEnabled = true;
             this.listBoxISTORIJA.ItemHeight = 25;
-            this.listBoxISTORIJA.Location = new System.Drawing.Point(13, 93);
+            this.listBoxISTORIJA.Location = new System.Drawing.Point(11, 193);
             this.listBoxISTORIJA.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxISTORIJA.Name = "listBoxISTORIJA";
             this.listBoxISTORIJA.Size = new System.Drawing.Size(309, 375);
             this.listBoxISTORIJA.TabIndex = 4;
-            this.listBoxISTORIJA.ValueMember = "Ljubimac";
+            this.listBoxISTORIJA.ValueMember = "PosetaID";
             this.listBoxISTORIJA.SelectedIndexChanged += new System.EventHandler(this.listBoxISTORIJA_SelectedIndexChanged);
             // 
             // bindingSourcePregledi
@@ -137,18 +142,19 @@ namespace UI_pokusaj.Forms
             this.listBoxTerapija.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxTerapija.FormattingEnabled = true;
             this.listBoxTerapija.ItemHeight = 25;
-            this.listBoxTerapija.Location = new System.Drawing.Point(376, 93);
+            this.listBoxTerapija.Location = new System.Drawing.Point(374, 193);
             this.listBoxTerapija.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxTerapija.Name = "listBoxTerapija";
             this.listBoxTerapija.Size = new System.Drawing.Size(309, 350);
             this.listBoxTerapija.TabIndex = 6;
-            this.listBoxTerapija.ValueMember = "Ljubimac";
+            this.listBoxTerapija.ValueMember = "PosetaID";
+            this.listBoxTerapija.SelectedIndexChanged += new System.EventHandler(this.listBoxTerapija_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(371, 64);
+            this.label3.Location = new System.Drawing.Point(369, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(184, 25);
             this.label3.TabIndex = 7;
@@ -157,12 +163,44 @@ namespace UI_pokusaj.Forms
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(692, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(690, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(312, 271);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.bindingSourceVlasnik;
+            this.comboBox2.DisplayMember = "VlasnikID";
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(599, 12);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(312, 24);
+            this.comboBox2.TabIndex = 9;
+            this.comboBox2.ValueMember = "VlasnikID";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // bindingSourceVlasnik
+            // 
+            this.bindingSourceVlasnik.DataMember = "Vlasnik";
+            this.bindingSourceVlasnik.DataSource = this.vetSet11;
+            // 
+            // vlasnikTableAdapter
+            // 
+            this.vlasnikTableAdapter.ClearBeforeFill = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(585, 17);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "ID korisnika----ovo je privremeno-U slucaju da je app namenjena firmi onda moze d" +
+    "a ostane";
             // 
             // FormOnama
             // 
@@ -170,7 +208,9 @@ namespace UI_pokusaj.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1016, 711);
+            this.ClientSize = new System.Drawing.Size(1017, 709);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listBoxTerapija);
@@ -188,6 +228,7 @@ namespace UI_pokusaj.Forms
             ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePregledi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVlasnik)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +247,9 @@ namespace UI_pokusaj.Forms
         private System.Windows.Forms.ListBox listBoxTerapija;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource bindingSourceVlasnik;
+        private VetSet1TableAdapters.VlasnikTableAdapter vlasnikTableAdapter;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -12,18 +12,29 @@ namespace UI_pokusaj.Forms
 {
     public partial class FormMedikamentiProdavnica : Form
     {
+   
         public FormMedikamentiProdavnica()
         {
             InitializeComponent();
+
         }
+
+
+
         int FlagPorudzbina = 0;
+        
+        
         private void FormMedikamentiProdavnica_Load_1(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vetSet11.Vlasnik' table. You can move, or remove it, as needed.
+            this.vlasnikTableAdapter.Fill(this.vetSet11.Vlasnik);
+            // TODO: This line of code loads data into the 'vetSet11.Vlasnik' table. You can move, or remove it, as needed.
+            this.vlasnikTableAdapter.Fill(this.vetSet11.Vlasnik);
             // TODO: This line of code loads data into the 'vetSet11.Porudzbine' table. You can move, or remove it, as needed.
             this.porudzbineTableAdapter.Fill(this.vetSet11.Porudzbine);
             // TODO: This line of code loads data into the 'vetSet11.Shop' table. You can move, or remove it, as needed.
             this.shopTableAdapter1.Fill(this.vetSet11.Shop);
-     
+            comboBoxVlasnik.Hide();
             comboBoxCena.Hide();
         }
 
@@ -33,6 +44,7 @@ namespace UI_pokusaj.Forms
             if (textBoxGrad.Text != "" && textBoxTrenutnaKolicina.Text != "" && textBoxCENA.Text != "" &&
                 textBoxMejl.Text != "" && richTextBoxADRESA.Text != "")
             {
+                var row = vetSet11.Porudzbine.NewPorudzbineRow();
                 var res = MessageBox.Show("Potvrdite porudzbinu!", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
@@ -41,7 +53,7 @@ namespace UI_pokusaj.Forms
                         MessageBox.Show($"Poručeno je:  {textBoxTrenutnaKolicina.Text} proizvoda:  {comboBoxProizvodi.Text} " +
                             $" Ukupna cena:  {textBoxCENA.Text}", "Zavrsena kupovina", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //puni se baza 
-                    var row = vetSet11.Porudzbine.NewPorudzbineRow();
+                    
                     row.Proizvodi = comboBoxProizvodi.SelectedIndex + 1;// zbog indeksa...0+1
                     //-----------------------------------------------??
                     row.Količina = textBoxTrenutnaKolicina.Text;
@@ -50,18 +62,21 @@ namespace UI_pokusaj.Forms
                     //-----------------------------------------------
                     //nacin placaja radioBtn...
                     if (radioButtonOnline.Checked)
-                        row.Način_plaćanja = "Pouzećem";
-                    if (radioButtonPouzecem.Checked)
                         row.Način_plaćanja = "Online";
+                    if (radioButtonPouzecem.Checked)
+                        row.Način_plaćanja = "Pouzećem";
                     //-----------------------------------------
                     row.Email = textBoxMejl.Text;
                     row.Grad = textBoxGrad.Text;
+
+                                                                         row.Vlasnik = Int32.Parse(comboBoxVlasnik.Text);
                     //88888888888888888888888888888888888888888888888
                     vetSet11.Porudzbine.AddPorudzbineRow(row);
                     porudzbineTableAdapter.Update(vetSet11);
                     //flag za kupovinu i otkazivanje
                     FlagPorudzbina = 1;
                     
+
                 }
             }
             else
@@ -100,29 +115,6 @@ namespace UI_pokusaj.Forms
             textBoxCENA.Text = a.ToString();
         }
 
-        private void btnOtkaziKupovinu_Click(object sender, EventArgs e)
-        {
-            //ako je napravljena porudzbina fleg je =1, ovde na samom startu pitaj da li je ==1,
-            //ako jeste brisi poslednju porudzbinu po id-u 
-            if (FlagPorudzbina == 1) {
-                FlagPorudzbina = 0; //resetuje fleg
-                                    //brisi vrstu po id
-                                    ////////////////////////////////////////////////////////
-                                    //ovo ne brise nego postavlja sve na 0 u tabelu za tu porudzbiu...----------------KAKO OBRISATI RED 
-
-               
-
-
-
-
-                ////////////////////////////////////////////////////////
-            }
-            else
-            {
-                //nista
-            }
-        }
-
         private void textBoxCENA_TextChanged(object sender, EventArgs e)
         {
           
@@ -146,6 +138,17 @@ namespace UI_pokusaj.Forms
         private void comboBoxCena_SelectedIndexChanged(object sender, EventArgs e)
         {
            //postoji samo zbog preuzimanja cene||| VRV postoji bolje resenje...
+        }
+
+
+        private void comboBoxVlasnik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void radioButtonPouzecem_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
