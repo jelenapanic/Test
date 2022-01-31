@@ -18,7 +18,9 @@ namespace UI_pokusaj.Forms
         }
 
         private void FormOnama_Load(object sender, EventArgs e)
-        {           
+        {
+            // TODO: This line of code loads data into the 'vetSet11.Vlasnik' table. You can move, or remove it, as needed.
+            this.vlasnikTableAdapter.Fill(this.vetSet11.Vlasnik);
             // TODO: This line of code loads data into the 'vetSet11.Pregledi' table. You can move, or remove it, as needed.
             this.preglediTableAdapter.Fill(this.vetSet11.Pregledi);
             // TODO: This line of code loads data into the 'vetSet11.Ljubimac' table. You can move, or remove it, as needed.
@@ -26,21 +28,33 @@ namespace UI_pokusaj.Forms
            
 
             comboBox1_SelectedIndexChanged(comboBox1, null);
+            
+            comboBox2_SelectedIndexChanged(comboBox2, null);
+            listBoxISTORIJA.Hide();
+            listBoxTerapija.Hide();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             bindingSourcePregledi.Filter = string.Format("Ljubimac = {0}", comboBox1.SelectedValue ?? 0);
-                
+            // bindingSourceLjubimci1.Filter
+            listBoxISTORIJA.Show();
+            listBoxTerapija.Show();
         }
 
         private void listBoxISTORIJA_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-           // razmotri mogucnost da ovo bude personalizovano| ulogovani korisnik moze videti istoriju samo za svoje zovotinje!!!!!!!!!!!
         }
 
-      
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bindingSourceLjubimci1.Filter = string.Format("Vlasnik = {0}", comboBox2.SelectedValue ?? 0);
+        }
+
+        private void listBoxTerapija_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
  

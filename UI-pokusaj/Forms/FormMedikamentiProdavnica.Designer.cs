@@ -49,7 +49,6 @@ namespace UI_pokusaj.Forms
             this.textBoxMejl = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxGrad = new System.Windows.Forms.TextBox();
-            this.btnOtkaziKupovinu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButtonOnline = new System.Windows.Forms.RadioButton();
             this.radioButtonPouzecem = new System.Windows.Forms.RadioButton();
@@ -57,14 +56,19 @@ namespace UI_pokusaj.Forms
             this.bindingSourceCena1 = new System.Windows.Forms.BindingSource(this.components);
             this.shopTableAdapter1 = new UI_pokusaj.VetSet1TableAdapters.ShopTableAdapter();
             this.bindingSourcePorudzbina = new System.Windows.Forms.BindingSource(this.components);
-            this.porudzbineTableAdapter = new UI_pokusaj.VetSet1TableAdapters.PorudzbineTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.porudzbineTableAdapter = new UI_pokusaj.VetSet1TableAdapters.PorudzbineTableAdapter();
+            this.bindingSourceVlasnik = new System.Windows.Forms.BindingSource(this.components);
+            this.vlasnikTableAdapter = new UI_pokusaj.VetSet1TableAdapters.VlasnikTableAdapter();
+            this.comboBoxVlasnik = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceShop1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCena1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePorudzbina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVlasnik)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -257,20 +261,6 @@ namespace UI_pokusaj.Forms
             this.textBoxGrad.Size = new System.Drawing.Size(395, 21);
             this.textBoxGrad.TabIndex = 24;
             // 
-            // btnOtkaziKupovinu
-            // 
-            this.btnOtkaziKupovinu.BackColor = System.Drawing.Color.Aquamarine;
-            this.btnOtkaziKupovinu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOtkaziKupovinu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOtkaziKupovinu.Location = new System.Drawing.Point(235, 390);
-            this.btnOtkaziKupovinu.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOtkaziKupovinu.Name = "btnOtkaziKupovinu";
-            this.btnOtkaziKupovinu.Size = new System.Drawing.Size(166, 52);
-            this.btnOtkaziKupovinu.TabIndex = 25;
-            this.btnOtkaziKupovinu.Text = "Otkaži";
-            this.btnOtkaziKupovinu.UseVisualStyleBackColor = false;
-            this.btnOtkaziKupovinu.Click += new System.EventHandler(this.btnOtkaziKupovinu_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioButtonOnline);
@@ -301,7 +291,7 @@ namespace UI_pokusaj.Forms
             // radioButtonPouzecem
             // 
             this.radioButtonPouzecem.AutoSize = true;
-            this.radioButtonPouzecem.Location = new System.Drawing.Point(160, 23);
+            this.radioButtonPouzecem.Location = new System.Drawing.Point(160, 21);
             this.radioButtonPouzecem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonPouzecem.Name = "radioButtonPouzecem";
             this.radioButtonPouzecem.Size = new System.Drawing.Size(122, 28);
@@ -309,13 +299,14 @@ namespace UI_pokusaj.Forms
             this.radioButtonPouzecem.TabStop = true;
             this.radioButtonPouzecem.Text = "Pouzecem";
             this.radioButtonPouzecem.UseVisualStyleBackColor = true;
+            this.radioButtonPouzecem.CheckedChanged += new System.EventHandler(this.radioButtonPouzecem_CheckedChanged);
             // 
             // comboBoxCena
             // 
             this.comboBoxCena.DataSource = this.bindingSourceCena1;
             this.comboBoxCena.DisplayMember = "Cena";
             this.comboBoxCena.FormattingEnabled = true;
-            this.comboBoxCena.Location = new System.Drawing.Point(661, 97);
+            this.comboBoxCena.Location = new System.Drawing.Point(77, 84);
             this.comboBoxCena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxCena.Name = "comboBoxCena";
             this.comboBoxCena.Size = new System.Drawing.Size(121, 24);
@@ -337,19 +328,49 @@ namespace UI_pokusaj.Forms
             this.bindingSourcePorudzbina.DataMember = "Porudzbine";
             this.bindingSourcePorudzbina.DataSource = this.vetSet11;
             // 
-            // porudzbineTableAdapter
-            // 
-            this.porudzbineTableAdapter.ClearBeforeFill = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(582, 145);
+            this.pictureBox1.Location = new System.Drawing.Point(583, 138);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(320, 322);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 538);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(475, 17);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "U slucaju nastanka problema prilikom kupovine, pozvati: +381-1234-5678 ";
+            // 
+            // porudzbineTableAdapter
+            // 
+            this.porudzbineTableAdapter.ClearBeforeFill = true;
+            // 
+            // bindingSourceVlasnik
+            // 
+            this.bindingSourceVlasnik.DataMember = "Vlasnik";
+            this.bindingSourceVlasnik.DataSource = this.vetSet11;
+            // 
+            // vlasnikTableAdapter
+            // 
+            this.vlasnikTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBoxVlasnik
+            // 
+            this.comboBoxVlasnik.DataSource = this.bindingSourceVlasnik;
+            this.comboBoxVlasnik.DisplayMember = "VlasnikID";
+            this.comboBoxVlasnik.FormattingEnabled = true;
+            this.comboBoxVlasnik.Location = new System.Drawing.Point(24, 376);
+            this.comboBoxVlasnik.Name = "comboBoxVlasnik";
+            this.comboBoxVlasnik.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxVlasnik.TabIndex = 32;
+            this.comboBoxVlasnik.ValueMember = "VlasnikID";
+            this.comboBoxVlasnik.SelectedIndexChanged += new System.EventHandler(this.comboBoxVlasnik_SelectedIndexChanged);
             // 
             // FormMedikamentiProdavnica
             // 
@@ -358,10 +379,11 @@ namespace UI_pokusaj.Forms
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(926, 564);
+            this.Controls.Add(this.comboBoxVlasnik);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBoxCena);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnOtkaziKupovinu);
             this.Controls.Add(this.textBoxGrad);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBoxMejl);
@@ -391,6 +413,7 @@ namespace UI_pokusaj.Forms
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCena1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePorudzbina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVlasnik)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,7 +437,6 @@ namespace UI_pokusaj.Forms
         private System.Windows.Forms.TextBox textBoxMejl;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxGrad;
-        private System.Windows.Forms.Button btnOtkaziKupovinu;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxCena;
         private System.Windows.Forms.RadioButton radioButtonOnline;
@@ -424,7 +446,11 @@ namespace UI_pokusaj.Forms
         private VetSet1TableAdapters.ShopTableAdapter shopTableAdapter1;
         private System.Windows.Forms.BindingSource bindingSourceCena1;
         private System.Windows.Forms.BindingSource bindingSourcePorudzbina;
-        private VetSet1TableAdapters.PorudzbineTableAdapter porudzbineTableAdapter;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
+        private VetSet1TableAdapters.PorudzbineTableAdapter porudzbineTableAdapter;
+        private System.Windows.Forms.BindingSource bindingSourceVlasnik;
+        private VetSet1TableAdapters.VlasnikTableAdapter vlasnikTableAdapter;
+        private System.Windows.Forms.ComboBox comboBoxVlasnik;
     }
 }
