@@ -36,7 +36,6 @@
             this.labelRazlogPregleda = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.labelDatum = new System.Windows.Forms.Label();
-            this.buttonOtkaziPregled = new System.Windows.Forms.Button();
             this.buttonZakazi = new System.Windows.Forms.Button();
             this.textBoxImeZivotinje = new System.Windows.Forms.TextBox();
             this.labelImeZiv = new System.Windows.Forms.Label();
@@ -138,27 +137,14 @@
             this.labelDatum.TabIndex = 9;
             this.labelDatum.Text = "Datum:";
             // 
-            // buttonOtkaziPregled
-            // 
-            this.buttonOtkaziPregled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOtkaziPregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.buttonOtkaziPregled.Location = new System.Drawing.Point(673, 224);
-            this.buttonOtkaziPregled.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonOtkaziPregled.Name = "buttonOtkaziPregled";
-            this.buttonOtkaziPregled.Size = new System.Drawing.Size(119, 43);
-            this.buttonOtkaziPregled.TabIndex = 10;
-            this.buttonOtkaziPregled.Text = "Otkazi Pregled";
-            this.buttonOtkaziPregled.UseVisualStyleBackColor = true;
-            this.buttonOtkaziPregled.Click += new System.EventHandler(this.buttonOtkaziPregled_Click);
-            // 
             // buttonZakazi
             // 
             this.buttonZakazi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonZakazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.buttonZakazi.Location = new System.Drawing.Point(798, 224);
+            this.buttonZakazi.Location = new System.Drawing.Point(673, 224);
             this.buttonZakazi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonZakazi.Name = "buttonZakazi";
-            this.buttonZakazi.Size = new System.Drawing.Size(119, 43);
+            this.buttonZakazi.Size = new System.Drawing.Size(244, 43);
             this.buttonZakazi.TabIndex = 11;
             this.buttonZakazi.Text = "Zakazi pregled";
             this.buttonZakazi.UseVisualStyleBackColor = true;
@@ -485,7 +471,6 @@
             this.Controls.Add(this.labelImeZiv);
             this.Controls.Add(this.textBoxImeZivotinje);
             this.Controls.Add(this.buttonZakazi);
-            this.Controls.Add(this.buttonOtkaziPregled);
             this.Controls.Add(this.labelDatum);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.labelRazlogPregleda);
@@ -515,7 +500,6 @@
         private System.Windows.Forms.Label labelRazlogPregleda;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label labelDatum;
-        private System.Windows.Forms.Button buttonOtkaziPregled;
         private System.Windows.Forms.Button buttonZakazi;
         private System.Windows.Forms.TextBox textBoxImeZivotinje;
         private System.Windows.Forms.Label labelImeZiv;

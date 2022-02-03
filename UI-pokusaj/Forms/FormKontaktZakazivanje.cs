@@ -55,25 +55,29 @@ namespace UI_pokusaj.Forms
 
         private void buttonZakazi_Click(object sender, EventArgs e)
         {
-            
-            if (textBoxRazlogPregledaUnos.Text != "" && textBoxVrsta.Text != "" && comboBoxImeZiv.Text != "" && comboBoxIzborVeterinara.Text != "" )
+
+            if (textBoxRazlogPregledaUnos.Text != "" && textBoxVrsta.Text != "" && comboBoxImeZiv.Text != "" && comboBoxIzborVeterinara.Text != "")
             {
-                var row = vetSet11.Pregledi.NewPreglediRow();
-                row.Ljubimac = comboBoxImeZiv.SelectedIndex;
-                row.Veterinar = comboBoxIzborVeterinara.SelectedIndex;
-                row.Razlog = textBoxRazlogPregledaUnos.Text;
-                row.Datum_Pregleda = dateTimePicker1.Value;
-                row.Vrsta_životinje = textBoxVrsta.Text;
+                var res = MessageBox.Show("Sigurno želite da zakažete taj termin?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    var row = vetSet11.Pregledi.NewPreglediRow();
+                    row.Ljubimac = comboBoxImeZiv.SelectedIndex;
+                    row.Veterinar = comboBoxIzborVeterinara.SelectedIndex;
+                    row.Razlog = textBoxRazlogPregledaUnos.Text;
+                    row.Datum_Pregleda = dateTimePicker1.Value;
+                    row.Vrsta_životinje = textBoxVrsta.Text;
                     vetSet11.Pregledi.AddPreglediRow(row);
                     preglediTableAdapter.Update(vetSet11);     ///---------problem sa upisom dodatog ljubimca u bazu...
 
-                MessageBox.Show($"Zakazali ste pregled za ljubimca koji se zove {comboBoxImeZiv.Text} , kod veterinara sa imenom {comboBoxIzborVeterinara.Text}.", " ", MessageBoxButtons.OK);
-                comboBoxImeZiv.ResetText();
-                comboBoxIzborVeterinara.ResetText();
-                textBoxRazlogPregledaUnos.Clear();
-                textBoxVrsta.Clear();
-                dateTimePicker1.ResetText();
+                    MessageBox.Show($"Zakazali ste pregled za ljubimca koji se zove {comboBoxImeZiv.Text} , kod veterinara sa imenom {comboBoxIzborVeterinara.Text}.", " ", MessageBoxButtons.OK);
+                    comboBoxImeZiv.ResetText();
+                    comboBoxIzborVeterinara.ResetText();
+                    textBoxRazlogPregledaUnos.Clear();
+                    textBoxVrsta.Clear();
+                    dateTimePicker1.ResetText();
                     FlagZakazi = 1;
+                }
             }
             else
             {

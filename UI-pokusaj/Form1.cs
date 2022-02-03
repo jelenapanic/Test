@@ -46,6 +46,10 @@ namespace UI_pokusaj
     //-----------------------------------------------------------
         private void buttonZdravlje_Click(object sender, EventArgs e)
         {
+            buttonMedikament.Enabled = true;
+            buttonZakazi.Enabled = true;
+            buttonZivotinje.Enabled = true;
+            buttonZdravlje.Enabled = false;
 
             //---------------------------test
             if (btnFlag == 1 || ZakaziFlag ==1)
@@ -72,6 +76,11 @@ namespace UI_pokusaj
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void buttonMedikament_Click(object sender, EventArgs e)
         {
+            buttonMedikament.Enabled = false;
+            buttonZakazi.Enabled = true;
+            buttonZivotinje.Enabled = true;
+            buttonZdravlje.Enabled = true;
+
             if (ZakaziFlag == 1) 
             {
                 var res = MessageBox.Show("Da li ste sigurni? Vaši izbori neće biti zabeleženi!", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -98,6 +107,10 @@ namespace UI_pokusaj
         }
         private void buttonZakazi_Click(object sender, EventArgs e)
         {
+            buttonMedikament.Enabled = true;
+            buttonZakazi.Enabled = false;
+            buttonZivotinje.Enabled = true;
+            buttonZdravlje.Enabled = true;
             if (btnFlag == 1)
             {
                 var res = MessageBox.Show("Da li ste sigurni? Vaši izbori neće biti zabeleženi!", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -126,6 +139,11 @@ namespace UI_pokusaj
         }
         private void buttonZivotinje_Click(object sender, EventArgs e)
         {
+            buttonMedikament.Enabled = true;
+            buttonZakazi.Enabled = true;
+            buttonZivotinje.Enabled = false;
+            buttonZdravlje.Enabled = true; 
+
             if (btnFlag == 1 || ZakaziFlag==1)
             {
                 var res = MessageBox.Show("Da li ste sigurni? Vaši izbori neće biti zabeleženi!", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -137,12 +155,15 @@ namespace UI_pokusaj
                     ZakaziFlag = 0;
                     buttonMedikament.Enabled = true;
                     buttonZakazi.Enabled = true;
+                    buttonZivotinje.Enabled = false;
+                    buttonZdravlje.Enabled = true;
                 }
             }
             else
             {
                 loadform(new Forms.FormOnama());
                 labelBar1.Text = "Istorija vaseg ljubimca";
+                
             }
         }
         //------------------------------------------------------------------------------

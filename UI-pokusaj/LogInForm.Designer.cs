@@ -28,6 +28,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,9 +41,14 @@ namespace WindowsFormsApp1
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.vetSet11 = new UI_pokusaj.VetSet1();
+            this.bindingSourceVlasnik = new System.Windows.Forms.BindingSource(this.components);
+            this.vlasnikTableAdapter = new UI_pokusaj.VetSet1TableAdapters.VlasnikTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVlasnik)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,7 +59,7 @@ namespace WindowsFormsApp1
             this.label1.Location = new System.Drawing.Point(103, 142);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 44);
+            this.label1.Size = new System.Drawing.Size(173, 44);
             this.label1.TabIndex = 1;
             this.label1.Text = "LOG IN";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -194,6 +200,20 @@ namespace WindowsFormsApp1
             this.label4.Text = "Novi korisnik? Registruj se";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // vetSet11
+            // 
+            this.vetSet11.DataSetName = "VetSet1";
+            this.vetSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingSourceVlasnik
+            // 
+            this.bindingSourceVlasnik.DataMember = "Vlasnik";
+            this.bindingSourceVlasnik.DataSource = this.vetSet11;
+            // 
+            // vlasnikTableAdapter
+            // 
+            this.vlasnikTableAdapter.ClearBeforeFill = true;
+            // 
             // LogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -221,6 +241,8 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVlasnik)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,6 +262,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelReg;
         private System.Windows.Forms.Label label4;
+        private UI_pokusaj.VetSet1 vetSet11;
+        private System.Windows.Forms.BindingSource bindingSourceVlasnik;
+        private UI_pokusaj.VetSet1TableAdapters.VlasnikTableAdapter vlasnikTableAdapter;
     }
 }
 
