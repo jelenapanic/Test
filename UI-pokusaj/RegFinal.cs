@@ -31,7 +31,13 @@ namespace UI_pokusaj
                 else row.Pol = "M";
                 row.Rodjendan = dateTimePicker1.Value;
                 //vet?????
-                //vlasnik nekako nzm
+                //vlasnik nekako nzm-------------------------RESIO
+
+                //-----------------------test
+                int incIDvlasnik = vetSet11.Vlasnik.Max(x => x.VlasnikID);
+                row.Vlasnik = incIDvlasnik+1; ////----------napravi: Izvuci MAX ID i dodaj 1 zatim upisi na neku lok pa odatle u row.Vlasnik
+                //------------------------test
+
                 vetSet11.Ljubimac.AddLjubimacRow(row);
                 ljubimacTableAdapter1.Update(vetSet11);
 
@@ -55,9 +61,16 @@ namespace UI_pokusaj
             this.Hide();
         }
 
-        private void textBoxVlasnik1_TextChanged(object sender, EventArgs e)
+        private void RegFinal_Load(object sender, EventArgs e)
         {
-           
+            // TODO: This line of code loads data into the 'vetSet11.Vlasnik' table. You can move, or remove it, as needed.
+            this.vlasnikTableAdapter.Fill(this.vetSet11.Vlasnik);
+            comboBoxVlasnikID.Hide();
+        }
+
+        private void comboBoxVlasnikID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // UPISUJE ID NAJNOVIJEG KORISNIKA
         }
     }
 }

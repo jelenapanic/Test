@@ -40,10 +40,12 @@ namespace UI_pokusaj.Forms
             // bindingSourceLjubimci1.Filter
             listBoxISTORIJA.Show();
             listBoxTerapija.Show();
+            preglediTableAdapter.Update(vetSet11);
         }
 
         private void listBoxISTORIJA_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

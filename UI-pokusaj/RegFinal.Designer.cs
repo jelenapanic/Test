@@ -29,6 +29,7 @@ namespace UI_pokusaj
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPetName = new System.Windows.Forms.TextBox();
@@ -45,7 +46,13 @@ namespace UI_pokusaj
             this.vetSet11 = new UI_pokusaj.VetSet1();
             this.ljubimacTableAdapter1 = new UI_pokusaj.VetSet1TableAdapters.LjubimacTableAdapter();
             this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxVlasnikID = new System.Windows.Forms.ComboBox();
+            this.bindingSourceVlasnik = new System.Windows.Forms.BindingSource(this.components);
+            this.vlasnikTableAdapter = new UI_pokusaj.VetSet1TableAdapters.VlasnikTableAdapter();
+            this.bindingSourceLjubimac = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVlasnik)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLjubimac)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -233,12 +240,40 @@ namespace UI_pokusaj
             this.label7.TabIndex = 1;
             this.label7.Text = "Datum rođenja";
             // 
+            // comboBoxVlasnikID
+            // 
+            this.comboBoxVlasnikID.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.comboBoxVlasnikID.DataSource = this.bindingSourceVlasnik;
+            this.comboBoxVlasnikID.DisplayMember = "VlasnikID";
+            this.comboBoxVlasnikID.FormattingEnabled = true;
+            this.comboBoxVlasnikID.Location = new System.Drawing.Point(85, 63);
+            this.comboBoxVlasnikID.Name = "comboBoxVlasnikID";
+            this.comboBoxVlasnikID.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxVlasnikID.TabIndex = 6;
+            this.comboBoxVlasnikID.ValueMember = "VlasnikID";
+            this.comboBoxVlasnikID.SelectedIndexChanged += new System.EventHandler(this.comboBoxVlasnikID_SelectedIndexChanged);
+            // 
+            // bindingSourceVlasnik
+            // 
+            this.bindingSourceVlasnik.DataMember = "Vlasnik";
+            this.bindingSourceVlasnik.DataSource = this.vetSet11;
+            // 
+            // vlasnikTableAdapter
+            // 
+            this.vlasnikTableAdapter.ClearBeforeFill = true;
+            // 
+            // bindingSourceLjubimac
+            // 
+            this.bindingSourceLjubimac.DataMember = "Ljubimac";
+            this.bindingSourceLjubimac.DataSource = this.vetSet11;
+            // 
             // RegFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(308, 453);
+            this.Controls.Add(this.comboBoxVlasnikID);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.buttonPetInfo);
             this.Controls.Add(this.rBM);
@@ -259,7 +294,10 @@ namespace UI_pokusaj
             this.Name = "RegFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegFinal";
+            this.Load += new System.EventHandler(this.RegFinal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVlasnik)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLjubimac)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +321,9 @@ namespace UI_pokusaj
         private VetSet1 vetSet11;
         private VetSet1TableAdapters.LjubimacTableAdapter ljubimacTableAdapter1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBoxVlasnikID;
+        private System.Windows.Forms.BindingSource bindingSourceVlasnik;
+        private VetSet1TableAdapters.VlasnikTableAdapter vlasnikTableAdapter;
+        private System.Windows.Forms.BindingSource bindingSourceLjubimac;
     }
 }

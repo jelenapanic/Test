@@ -113,6 +113,7 @@ namespace UI_pokusaj.Forms
             this.textBoxTrenutnaKolicina.Location = new System.Drawing.Point(460, 57);
             this.textBoxTrenutnaKolicina.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTrenutnaKolicina.Name = "textBoxTrenutnaKolicina";
+            this.textBoxTrenutnaKolicina.ReadOnly = true;
             this.textBoxTrenutnaKolicina.Size = new System.Drawing.Size(59, 27);
             this.textBoxTrenutnaKolicina.TabIndex = 2;
             this.textBoxTrenutnaKolicina.Text = "0";
@@ -168,6 +169,7 @@ namespace UI_pokusaj.Forms
             this.textBoxCENA.Location = new System.Drawing.Point(363, 95);
             this.textBoxCENA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCENA.Name = "textBoxCENA";
+            this.textBoxCENA.ReadOnly = true;
             this.textBoxCENA.Size = new System.Drawing.Size(171, 21);
             this.textBoxCENA.TabIndex = 7;
             this.textBoxCENA.TextChanged += new System.EventHandler(this.textBoxCENA_TextChanged);
@@ -331,7 +333,7 @@ namespace UI_pokusaj.Forms
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(583, 138);
+            this.pictureBox1.Location = new System.Drawing.Point(583, 120);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(320, 322);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

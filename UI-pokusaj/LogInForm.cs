@@ -20,6 +20,8 @@ namespace WindowsFormsApp1
 
         private void LogInForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vetSet11.Vlasnik' table. You can move, or remove it, as needed.
+            this.vlasnikTableAdapter.Fill(this.vetSet11.Vlasnik);
 
         }
 
@@ -42,7 +44,11 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBoxUsername.Text == "admin" && textBoxPassword.Text == "admin")
+            string unos = textBoxUsername.Text;
+            var sifra = this.vetSet11.Vlasnik.Where(user => user.Username == unos).Select(user => user.Password).FirstOrDefault();
+            var juzernejm = this.vetSet11.Vlasnik.Where(user => user.Username == unos).Select(user => user.Username).FirstOrDefault();
+
+            if (textBoxUsername.Text == juzernejm && textBoxPassword.Text == sifra)
             {
                 new Form1().Show();
                 this.Hide();
@@ -66,6 +72,11 @@ namespace WindowsFormsApp1
         {
             new FormReg().Show();
             this.Hide(); 
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
