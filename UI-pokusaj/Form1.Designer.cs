@@ -230,11 +230,11 @@ namespace UI_pokusaj
             this.labelBar1.AutoSize = true;
             this.labelBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBar1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelBar1.Location = new System.Drawing.Point(482, 7);
+            this.labelBar1.Location = new System.Drawing.Point(466, 6);
             this.labelBar1.Name = "labelBar1";
-            this.labelBar1.Size = new System.Drawing.Size(28, 25);
+            this.labelBar1.Size = new System.Drawing.Size(110, 25);
             this.labelBar1.TabIndex = 5;
-            this.labelBar1.Text = "O";
+            this.labelBar1.Text = "Dobro došli";
             // 
             // panelForma
             // 
@@ -257,7 +257,6 @@ namespace UI_pokusaj
             this.Controls.Add(this.panelForma);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Veterinar";

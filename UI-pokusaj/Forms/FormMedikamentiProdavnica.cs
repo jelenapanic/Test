@@ -19,9 +19,7 @@ namespace UI_pokusaj.Forms
 
         }
 
-
-
-        int FlagPorudzbina = 0;
+        int FlagPorudzbina = 0;//trenutno nema namenu
         
         
         private void FormMedikamentiProdavnica_Load_1(object sender, EventArgs e)
@@ -41,10 +39,10 @@ namespace UI_pokusaj.Forms
         private void buttonPoruci_Click(object sender, EventArgs e)
         {
 
-            if (textBoxGrad.Text != "" && textBoxTrenutnaKolicina.Text != "" && textBoxCENA.Text != "" &&
-                textBoxMejl.Text != "" && richTextBoxADRESA.Text != "")
+            if (textBoxGrad.Text != "" && textBoxTrenutnaKolicina.Text != "" && textBoxCENA.Text != "" && textBoxCENA.Text !="0" &&
+                textBoxMejl.Text != "" && richTextBoxADRESA.Text != "" && textBoxTrenutnaKolicina.Text !="0")
             {
-                var row = vetSet11.Porudzbine.NewPorudzbineRow();
+             var row = vetSet11.Porudzbine.NewPorudzbineRow();                
                 var res = MessageBox.Show("Potvrdite porudzbinu!", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
@@ -69,12 +67,13 @@ namespace UI_pokusaj.Forms
                     row.Email = textBoxMejl.Text;
                     row.Grad = textBoxGrad.Text;
 
-                                                                         row.Vlasnik = Int32.Parse(comboBoxVlasnik.Text);
+                    row.Vlasnik = Int32.Parse(comboBoxVlasnik.Text);
+
                     //88888888888888888888888888888888888888888888888
                     vetSet11.Porudzbine.AddPorudzbineRow(row);
                     porudzbineTableAdapter.Update(vetSet11);
                     //flag za kupovinu i otkazivanje
-                    FlagPorudzbina = 1;
+                    FlagPorudzbina = 1;//nije u funkciji 
                     
 
                 }
@@ -82,9 +81,9 @@ namespace UI_pokusaj.Forms
             else
             {
                 MessageBox.Show("Popuni sva polja!");
+                if (textBoxTrenutnaKolicina.Text == "0")
+                    MessageBox.Show("Izaberite količinu");
             }
-            
-
             /*  ovde flagPoruci=1, ako se klikne otkazi on proverava da li je fleg set na 1;
              *  ako jeste onda brise poslednju unetu porudzbinu. posto je opasno ovo, ograniciti da je porucivanje mogce
              *  ako su sva polja popunjena, otkazi resetuje fleg i fleg postaje=0 sve dok se ne poruci nesto...

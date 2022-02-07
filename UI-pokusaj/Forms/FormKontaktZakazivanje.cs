@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +16,7 @@ namespace UI_pokusaj.Forms
         {
             InitializeComponent();
         }
-        int FlagZakazi = 0;
+        int FlagZakazi = 0; 
         private void FormKontaktZakazivanje_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'vetSet11.Pregledi' table. You can move, or remove it, as needed.
@@ -27,7 +27,8 @@ namespace UI_pokusaj.Forms
             this.ljubimacTableAdapter1.Fill(this.vetSet11.Ljubimac);
             // TODO: This line of code loads data into the 'vetSet11.Vlasnik' table. You can move, or remove it, as needed.
             this.vlasnikTableAdapter1.Fill(this.vetSet11.Vlasnik);
-     
+
+            comboBoxIzborVeterinara.SelectedValue = 0;
 
         }
 
@@ -55,8 +56,9 @@ namespace UI_pokusaj.Forms
 
         private void buttonZakazi_Click(object sender, EventArgs e)
         {
+            if (textBoxRazlogPregledaUnos.Text != "" && textBoxVrsta.Text != "" && comboBoxImeZiv.Text != "" && comboBoxIzborVeterinara.Text != "" && 
+                comboBoxIzborVeterinara.SelectedIndex != 0)
 
-            if (textBoxRazlogPregledaUnos.Text != "" && textBoxVrsta.Text != "" && comboBoxImeZiv.Text != "" && comboBoxIzborVeterinara.Text != "")
             {
                 var res = MessageBox.Show("Sigurno želite da zakažete taj termin?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
@@ -67,8 +69,20 @@ namespace UI_pokusaj.Forms
                     row.Razlog = textBoxRazlogPregledaUnos.Text;
                     row.Datum_Pregleda = dateTimePicker1.Value;
                     row.Vrsta_životinje = textBoxVrsta.Text;
-                    vetSet11.Pregledi.AddPreglediRow(row);
-                    preglediTableAdapter.Update(vetSet11);     ///---------problem sa upisom dodatog ljubimca u bazu...
+
+                    //----------------------------------------------------test
+                    var row2 = vetSet11.Ljubimac.NewLjubimacRow();
+                    row2.Vlasnik = Int32.Parse(comboBoxVlasnik.Text);//<<<<ovde treba da se upise id vlasnika u tab Ljubimac||RADI, ali testirajte
+                    vetSet11.Ljubimac.AddLjubimacRow(row2);
+                    ljubimacTableAdapter1.Update(vetSet11);
+                    //----------------------------------------------------test
+
+
+
+                    vetSet11.Pregledi.AddPreglediRow(row);//--------Postojao problem
+                    preglediTableAdapter.Update(vetSet11);     
+                    
+                   
 
                     MessageBox.Show($"Zakazali ste pregled za ljubimca koji se zove {comboBoxImeZiv.Text} , kod veterinara sa imenom {comboBoxIzborVeterinara.Text}.", " ", MessageBoxButtons.OK);
                     comboBoxImeZiv.ResetText();
@@ -84,20 +98,9 @@ namespace UI_pokusaj.Forms
                 MessageBox.Show("Popunite sva polja!");
             }
 
-
-    
-
-
-
         }
 
-        private void buttonOtkaziPregled_Click(object sender, EventArgs e)
-        {
-            //?Razmotriti ovo----da li da brise iz baze poslednju unetu stavku klikom na dugme zakazi?
-            //defaultno da bude disable, a nakon klika na zakazi postaje enable....--^
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // DUGME "NE"
         {
             labelImeZiv.Hide();
             labelVrstaZiv.Hide();
@@ -130,8 +133,20 @@ namespace UI_pokusaj.Forms
                     row.Pol = "Z";
                 else row.Pol = "M";
                 row.Rodjendan = dateTimePickerrodj.Value;
-                //vet?????
-                //vlasnik nekako nzm------------------------------------------problem
+
+                
+
+
+
+                //-------------------------------------------------test//    vet?????//vlasnik nekako nzm----RESENO ali TESTIRAJTE-------------problem
+                row.Vlasnik = Int32.Parse(comboBoxVlasnik.Text);
+                //-------------------------------------------------test
+
+
+
+
+
+
                 vetSet11.Ljubimac.AddLjubimacRow(row);
                 ljubimacTableAdapter1.Update(vetSet11);
 
@@ -174,7 +189,6 @@ namespace UI_pokusaj.Forms
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
         }
-    
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -182,6 +196,11 @@ namespace UI_pokusaj.Forms
             //  textBoxVrsta.Text = comboBoxVrstaZiv.Text;
             if (comboBoxVrstaZiv.SelectedItem != null)
                 textBoxVrsta.Text = comboBoxVrstaZiv.Text;
+        }
+
+        private void comboBoxVlasnik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bindingSourceLjubimac.Filter = string.Format("Vlasnik={0}", comboBoxVlasnik.SelectedValue ?? 0);
         }
     }
 }

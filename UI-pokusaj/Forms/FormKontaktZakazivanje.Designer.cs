@@ -68,6 +68,7 @@
             this.textBoxVrsta = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.comboBoxVlasnik = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vetSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLjubimac)).BeginInit();
@@ -83,7 +84,7 @@
             this.labelVrstaZiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVrstaZiv.Location = new System.Drawing.Point(3, 245);
             this.labelVrstaZiv.Name = "labelVrstaZiv";
-            this.labelVrstaZiv.Size = new System.Drawing.Size(126, 22);
+            this.labelVrstaZiv.Size = new System.Drawing.Size(129, 24);
             this.labelVrstaZiv.TabIndex = 3;
             this.labelVrstaZiv.Text = "Vrsta životinje:";
             this.labelVrstaZiv.Visible = false;
@@ -94,7 +95,7 @@
             this.labelVeterinar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVeterinar.Location = new System.Drawing.Point(496, 137);
             this.labelVeterinar.Name = "labelVeterinar";
-            this.labelVeterinar.Size = new System.Drawing.Size(88, 22);
+            this.labelVeterinar.Size = new System.Drawing.Size(91, 24);
             this.labelVeterinar.TabIndex = 5;
             this.labelVeterinar.Text = "Veterinar:";
             // 
@@ -113,7 +114,7 @@
             this.labelRazlogPregleda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRazlogPregleda.Location = new System.Drawing.Point(496, 95);
             this.labelRazlogPregleda.Name = "labelRazlogPregleda";
-            this.labelRazlogPregleda.Size = new System.Drawing.Size(145, 22);
+            this.labelRazlogPregleda.Size = new System.Drawing.Size(153, 24);
             this.labelRazlogPregleda.TabIndex = 7;
             this.labelRazlogPregleda.Text = "Razlog pregleda:";
             // 
@@ -133,7 +134,7 @@
             this.labelDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDatum.Location = new System.Drawing.Point(496, 183);
             this.labelDatum.Name = "labelDatum";
-            this.labelDatum.Size = new System.Drawing.Size(67, 22);
+            this.labelDatum.Size = new System.Drawing.Size(69, 24);
             this.labelDatum.TabIndex = 9;
             this.labelDatum.Text = "Datum:";
             // 
@@ -166,7 +167,7 @@
             this.labelImeZiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImeZiv.Location = new System.Drawing.Point(3, 207);
             this.labelImeZiv.Name = "labelImeZiv";
-            this.labelImeZiv.Size = new System.Drawing.Size(112, 22);
+            this.labelImeZiv.Size = new System.Drawing.Size(118, 24);
             this.labelImeZiv.TabIndex = 15;
             this.labelImeZiv.Text = "Ime životinje:";
             this.labelImeZiv.Visible = false;
@@ -211,7 +212,7 @@
             this.labelPolZiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelPolZiv.Location = new System.Drawing.Point(3, 331);
             this.labelPolZiv.Name = "labelPolZiv";
-            this.labelPolZiv.Size = new System.Drawing.Size(41, 22);
+            this.labelPolZiv.Size = new System.Drawing.Size(42, 24);
             this.labelPolZiv.TabIndex = 18;
             this.labelPolZiv.Text = "Pol:";
             this.labelPolZiv.Visible = false;
@@ -222,7 +223,7 @@
             this.labelDatumRodj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelDatumRodj.Location = new System.Drawing.Point(3, 370);
             this.labelDatumRodj.Name = "labelDatumRodj";
-            this.labelDatumRodj.Size = new System.Drawing.Size(132, 22);
+            this.labelDatumRodj.Size = new System.Drawing.Size(139, 24);
             this.labelDatumRodj.TabIndex = 19;
             this.labelDatumRodj.Text = "Datum rođenja:";
             this.labelDatumRodj.Visible = false;
@@ -233,7 +234,7 @@
             this.labelRasaZiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelRasaZiv.Location = new System.Drawing.Point(3, 286);
             this.labelRasaZiv.Name = "labelRasaZiv";
-            this.labelRasaZiv.Size = new System.Drawing.Size(126, 22);
+            this.labelRasaZiv.Size = new System.Drawing.Size(129, 24);
             this.labelRasaZiv.TabIndex = 21;
             this.labelRasaZiv.Text = "Rasa životinje:";
             this.labelRasaZiv.Visible = false;
@@ -245,7 +246,7 @@
             this.labelNoviLjubimac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelNoviLjubimac.Location = new System.Drawing.Point(103, 44);
             this.labelNoviLjubimac.Name = "labelNoviLjubimac";
-            this.labelNoviLjubimac.Size = new System.Drawing.Size(126, 22);
+            this.labelNoviLjubimac.Size = new System.Drawing.Size(133, 24);
             this.labelNoviLjubimac.TabIndex = 22;
             this.labelNoviLjubimac.Text = "Novi ljubimac?";
             // 
@@ -287,7 +288,7 @@
             this.radioButtonPolM.Location = new System.Drawing.Point(155, 329);
             this.radioButtonPolM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonPolM.Name = "radioButtonPolM";
-            this.radioButtonPolM.Size = new System.Drawing.Size(45, 26);
+            this.radioButtonPolM.Size = new System.Drawing.Size(47, 28);
             this.radioButtonPolM.TabIndex = 26;
             this.radioButtonPolM.TabStop = true;
             this.radioButtonPolM.Text = "M";
@@ -301,7 +302,7 @@
             this.radioButtonPolZ.Location = new System.Drawing.Point(205, 329);
             this.radioButtonPolZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonPolZ.Name = "radioButtonPolZ";
-            this.radioButtonPolZ.Size = new System.Drawing.Size(42, 26);
+            this.radioButtonPolZ.Size = new System.Drawing.Size(43, 28);
             this.radioButtonPolZ.TabIndex = 27;
             this.radioButtonPolZ.TabStop = true;
             this.radioButtonPolZ.Text = "Ž";
@@ -324,7 +325,7 @@
             this.labelIzborVrste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelIzborVrste.Location = new System.Drawing.Point(496, 54);
             this.labelIzborVrste.Name = "labelIzborVrste";
-            this.labelIzborVrste.Size = new System.Drawing.Size(126, 22);
+            this.labelIzborVrste.Size = new System.Drawing.Size(129, 24);
             this.labelIzborVrste.TabIndex = 29;
             this.labelIzborVrste.Text = "Vrsta životinje:";
             // 
@@ -334,7 +335,7 @@
             this.labelIyborImena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelIyborImena.Location = new System.Drawing.Point(496, 13);
             this.labelIyborImena.Name = "labelIyborImena";
-            this.labelIyborImena.Size = new System.Drawing.Size(112, 22);
+            this.labelIyborImena.Size = new System.Drawing.Size(118, 24);
             this.labelIyborImena.TabIndex = 30;
             this.labelIyborImena.Text = "Ime životinje:";
             // 
@@ -442,12 +443,25 @@
             this.pictureBox2.TabIndex = 36;
             this.pictureBox2.TabStop = false;
             // 
+            // comboBoxVlasnik
+            // 
+            this.comboBoxVlasnik.DataSource = this.bindingSourceVlasnik1;
+            this.comboBoxVlasnik.DisplayMember = "VlasnikID";
+            this.comboBoxVlasnik.FormattingEnabled = true;
+            this.comboBoxVlasnik.Location = new System.Drawing.Point(7, 11);
+            this.comboBoxVlasnik.Name = "comboBoxVlasnik";
+            this.comboBoxVlasnik.Size = new System.Drawing.Size(89, 24);
+            this.comboBoxVlasnik.TabIndex = 37;
+            this.comboBoxVlasnik.ValueMember = "VlasnikID";
+            this.comboBoxVlasnik.SelectedIndexChanged += new System.EventHandler(this.comboBoxVlasnik_SelectedIndexChanged);
+            // 
             // FormKontaktZakazivanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(945, 486);
+            this.Controls.Add(this.comboBoxVlasnik);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxVrsta);
@@ -532,6 +546,7 @@
         private System.Windows.Forms.TextBox textBoxVrsta;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ComboBox comboBoxVlasnik;
         //       private UI_pokusaj.BazaDataSetTableAdapters.VeterinarTableAdapter veterinarTableAdapter;
     }
 }
