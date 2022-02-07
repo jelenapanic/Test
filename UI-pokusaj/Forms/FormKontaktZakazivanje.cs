@@ -64,7 +64,12 @@ namespace UI_pokusaj.Forms
                 if (res == DialogResult.Yes)
                 {
                     var row = vetSet11.Pregledi.NewPreglediRow();
-                    row.Ljubimac = comboBoxImeZiv.SelectedIndex;
+
+                  //  row.Ljubimac = comboBoxImeZiv.SelectedIndex;
+                    //------------------------------------------------TEST
+                    row.Ljubimac = vetSet11.Ljubimac.Max(x=>x.LjubimacID);
+                    //------------------------------------------------TEST
+
                     row.Veterinar = comboBoxIzborVeterinara.SelectedIndex;
                     row.Razlog = textBoxRazlogPregledaUnos.Text;
                     row.Datum_Pregleda = dateTimePicker1.Value;
@@ -180,10 +185,16 @@ namespace UI_pokusaj.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxImeZiv.SelectedIndex != -1)
+//           if (comboBoxImeZiv.SelectedIndex != -1)
             {
-                textBoxVrsta.Text=comboBoxVrstaZiv.Text.Trim();
+                textBoxVrsta.Text = comboBoxVrstaZiv.Text;//.Trim();
             }
+
+
+
+
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -194,8 +205,8 @@ namespace UI_pokusaj.Forms
         {
             //  textBoxVrsta.Text = comboBoxVrstaZiv.ValueMember;
             //  textBoxVrsta.Text = comboBoxVrstaZiv.Text;
-            if (comboBoxVrstaZiv.SelectedItem != null)
-                textBoxVrsta.Text = comboBoxVrstaZiv.Text;
+//            if (comboBoxVrstaZiv.SelectedItem != null)
+//                textBoxVrsta.Text = comboBoxVrstaZiv.Text;//----------------------------------ovde
         }
 
         private void comboBoxVlasnik_SelectedIndexChanged(object sender, EventArgs e)

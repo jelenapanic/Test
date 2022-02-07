@@ -176,9 +176,9 @@ namespace UI_pokusaj.Forms
             this.comboBox2.DisplayMember = "VlasnikID";
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(599, 12);
+            this.comboBox2.Location = new System.Drawing.Point(426, 6);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(312, 24);
+            this.comboBox2.Size = new System.Drawing.Size(257, 24);
             this.comboBox2.TabIndex = 9;
             this.comboBox2.ValueMember = "VlasnikID";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
@@ -195,12 +195,11 @@ namespace UI_pokusaj.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 12);
+            this.label4.Location = new System.Drawing.Point(180, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(585, 17);
+            this.label4.Size = new System.Drawing.Size(240, 17);
             this.label4.TabIndex = 10;
-            this.label4.Text = "ID korisnika----ovo je privremeno-U slucaju da je app namenjena firmi onda moze d" +
-    "a ostane";
+            this.label4.Text = "Broj korisnika koji koristi nase usluge";
             // 
             // FormOnama
             // 
